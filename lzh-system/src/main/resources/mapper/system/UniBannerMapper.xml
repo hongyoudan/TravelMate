@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzh.system.mapper.UniBannerMapper">
+
+    <resultMap type="UniBanner" id="UniBannerResult">
+        <result property="id"    column="id"    />
+        <result property="title"    column="title"    />
+        <result property="link"    column="link"    />
+        <result property="imgUrl"    column="img_url"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectUniBannerVo">
+        select id, title, link, img_url, create_time, update_time from uni_banner
+    </sql>
+
+    <select id="selectUniBannerList" parameterType="UniBanner" resultMap="UniBannerResult">
+        <include refid="selectUniBannerVo"/>
+        <where>
+            <if test="title != null  and title != ''"> and title = #{title}</if>
+            <if test="link != null  and link != ''"> and link = #{link}</if>
+            <if test="imgUrl != null  and imgUrl != ''"> and img_url = #{imgUrl}</if>
+        </where>
+    </select>
+
+    <select id="selectUniBannerById" parameterType="Long" resultMap="UniBannerResult">
+        <include refid="selectUniBannerVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertUniBanner" parameterType="UniBanner" useGeneratedKeys="true" keyProperty="id">
+        insert into uni_banner
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">title,</if>
+            <if test="link != null and link != ''">link,</if>
+            <if test="imgUrl != null and imgUrl != ''">img_url,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">#{title},</if>
+            <if test="link != null and link != ''">#{link},</if>
+            <if test="imgUrl != null and imgUrl != ''">#{imgUrl},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateUniBanner" parameterType="UniBanner">
+        update uni_banner
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null and title != ''">title = #{title},</if>
+            <if test="link != null and link != ''">link = #{link},</if>
+            <if test="imgUrl != null and imgUrl != ''">img_url = #{imgUrl},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteUniBannerById" parameterType="Long">
+        delete from uni_banner where id = #{id}
+    </delete>
+
+    <delete id="deleteUniBannerByIds" parameterType="String">
+        delete from uni_banner where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
