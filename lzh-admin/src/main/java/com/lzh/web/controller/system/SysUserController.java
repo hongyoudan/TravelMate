@@ -20,7 +20,6 @@ import com.lzh.common.annotation.Log;
 import com.lzh.common.constant.UserConstants;
 import com.lzh.common.core.controller.BaseController;
 import com.lzh.common.core.domain.AjaxResult;
-import com.lzh.common.core.domain.entity.SysDept;
 import com.lzh.common.core.domain.entity.SysRole;
 import com.lzh.common.core.domain.entity.SysUser;
 import com.lzh.common.core.page.TableDataInfo;
@@ -28,8 +27,6 @@ import com.lzh.common.enums.BusinessType;
 import com.lzh.common.utils.SecurityUtils;
 import com.lzh.common.utils.StringUtils;
 import com.lzh.common.utils.poi.ExcelUtil;
-import com.lzh.system.service.ISysDeptService;
-import com.lzh.system.service.ISysPostService;
 import com.lzh.system.service.ISysRoleService;
 import com.lzh.system.service.ISysUserService;
 
@@ -47,12 +44,6 @@ public class SysUserController extends BaseController
 
     @Autowired
     private ISysRoleService roleService;
-
-    @Autowired
-    private ISysDeptService deptService;
-
-    @Autowired
-    private ISysPostService postService;
 
     /**
      * 获取用户列表
@@ -106,12 +97,10 @@ public class SysUserController extends BaseController
         AjaxResult ajax = AjaxResult.success();
         List<SysRole> roles = roleService.selectRoleAll();
         ajax.put("roles", SysUser.isAdmin(userId) ? roles : roles.stream().filter(r -> !r.isAdmin()).collect(Collectors.toList()));
-        ajax.put("posts", postService.selectPostAll());
         if (StringUtils.isNotNull(userId))
         {
             SysUser sysUser = userService.selectUserById(userId);
             ajax.put(AjaxResult.DATA_TAG, sysUser);
-            ajax.put("postIds", postService.selectPostListByUserId(userId));
             ajax.put("roleIds", sysUser.getRoles().stream().map(SysRole::getRoleId).collect(Collectors.toList()));
         }
         return ajax;
@@ -242,15 +231,5 @@ public class SysUserController extends BaseController
         userService.checkUserDataScope(userId);
         userService.insertUserAuth(userId, roleIds);
         return success();
-    }
-
-    /**
-     * 获取部门树列表
-     */
-    @PreAuthorize("@ss.hasPermi('system:user:list')")
-    @GetMapping("/deptTree")
-    public AjaxResult deptTree(SysDept dept)
-    {
-        return success(deptService.selectDeptTreeList(dept));
     }
 }

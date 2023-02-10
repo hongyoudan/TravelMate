@@ -30,9 +30,6 @@ public class LzhConfig
     /** 获取地址开关 */
     private static boolean addressEnabled;
 
-    /** 验证码类型 */
-    private static String captchaType;
-
     public String getName()
     {
         return name;
@@ -91,14 +88,6 @@ public class LzhConfig
     public void setAddressEnabled(boolean addressEnabled)
     {
         LzhConfig.addressEnabled = addressEnabled;
-    }
-
-    public static String getCaptchaType() {
-        return captchaType;
-    }
-
-    public void setCaptchaType(String captchaType) {
-        LzhConfig.captchaType = captchaType;
     }
 
     /**

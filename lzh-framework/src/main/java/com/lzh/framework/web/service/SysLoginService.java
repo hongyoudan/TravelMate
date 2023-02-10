@@ -8,23 +8,16 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import com.lzh.common.constant.CacheConstants;
-import com.lzh.common.constant.Constants;
 import com.lzh.common.core.domain.entity.SysUser;
 import com.lzh.common.core.domain.model.LoginUser;
 import com.lzh.common.core.redis.RedisCache;
 import com.lzh.common.exception.ServiceException;
-import com.lzh.common.exception.user.CaptchaException;
-import com.lzh.common.exception.user.CaptchaExpireException;
 import com.lzh.common.exception.user.UserPasswordNotMatchException;
 import com.lzh.common.utils.DateUtils;
-import com.lzh.common.utils.MessageUtils;
 import com.lzh.common.utils.ServletUtils;
 import com.lzh.common.utils.StringUtils;
 import com.lzh.common.utils.ip.IpUtils;
-import com.lzh.framework.manager.AsyncManager;
-import com.lzh.framework.manager.factory.AsyncFactory;
 import com.lzh.framework.security.context.AuthenticationContextHolder;
-import com.lzh.system.service.ISysConfigService;
 import com.lzh.system.service.ISysUserService;
 
 /**
@@ -47,26 +40,16 @@ public class SysLoginService
     @Autowired
     private ISysUserService userService;
 
-    @Autowired
-    private ISysConfigService configService;
-
     /**
      * 登录验证
      * 
      * @param username 用户名
      * @param password 密码
-     * @param code 验证码
      * @param uuid 唯一标识
      * @return 结果
      */
-    public String login(String username, String password, String code, String uuid)
+    public String login(String username, String password, String uuid)
     {
-        boolean captchaEnabled = configService.selectCaptchaEnabled();
-        // 验证码开关
-        if (captchaEnabled)
-        {
-            validateCaptcha(username, code, uuid);
-        }
         // 用户验证
         Authentication authentication = null;
         try
@@ -80,12 +63,10 @@ public class SysLoginService
         {
             if (e instanceof BadCredentialsException)
             {
-                AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.password.not.match")));
                 throw new UserPasswordNotMatchException();
             }
             else
             {
-                AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, e.getMessage()));
                 throw new ServiceException(e.getMessage());
             }
         }
@@ -93,36 +74,10 @@ public class SysLoginService
         {
             AuthenticationContextHolder.clearContext();
         }
-        AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_SUCCESS, MessageUtils.message("user.login.success")));
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
         recordLoginInfo(loginUser.getUserId());
         // 生成token
         return tokenService.createToken(loginUser);
-    }
-
-    /**
-     * 校验验证码
-     * 
-     * @param username 用户名
-     * @param code 验证码
-     * @param uuid 唯一标识
-     * @return 结果
-     */
-    public void validateCaptcha(String username, String code, String uuid)
-    {
-        String verifyKey = CacheConstants.CAPTCHA_CODE_KEY + StringUtils.nvl(uuid, "");
-        String captcha = redisCache.getCacheObject(verifyKey);
-        redisCache.deleteObject(verifyKey);
-        if (captcha == null)
-        {
-            AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.jcaptcha.expire")));
-            throw new CaptchaExpireException();
-        }
-        if (!code.equalsIgnoreCase(captcha))
-        {
-            AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL, MessageUtils.message("user.jcaptcha.error")));
-            throw new CaptchaException();
-        }
     }
 
     /**

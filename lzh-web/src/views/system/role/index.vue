@@ -27,7 +27,7 @@
           style="width: 240px"
         >
           <el-option
-            v-for="dict in dict.type.sys_normal_disable"
+            v-for="dict in statusOptions"
             :key="dict.value"
             :label="dict.label"
             :value="dict.value"
@@ -176,7 +176,7 @@
         <el-form-item label="状态">
           <el-radio-group v-model="form.status">
             <el-radio
-              v-for="dict in dict.type.sys_normal_disable"
+              v-for="dict in statusOptions"
               :key="dict.value"
               :label="dict.value"
             >{{dict.label}}</el-radio>
@@ -257,9 +257,15 @@ import { treeselect as menuTreeselect, roleMenuTreeselect } from "@/api/system/m
 
 export default {
   name: "Role",
-  dicts: ['sys_normal_disable'],
   data() {
     return {
+      statusOptions: [{
+        value: '0',
+        label: '正常'
+      }, {
+        value: '1',
+        label: '停用'
+      }],
       // 遮罩层
       loading: true,
       // 选中数组

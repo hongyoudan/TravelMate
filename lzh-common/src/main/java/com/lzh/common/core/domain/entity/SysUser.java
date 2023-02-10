@@ -10,7 +10,6 @@ import com.lzh.common.annotation.Excel.ColumnType;
 import com.lzh.common.annotation.Excel.Type;
 import com.lzh.common.annotation.Excels;
 import com.lzh.common.core.domain.BaseEntity;
-import com.lzh.common.xss.Xss;
 
 /**
  * 用户对象 sys_user
@@ -75,7 +74,6 @@ public class SysUser extends BaseEntity
         @Excel(name = "部门名称", targetAttr = "deptName", type = Type.EXPORT),
         @Excel(name = "部门负责人", targetAttr = "leader", type = Type.EXPORT)
     })
-    private SysDept dept;
 
     /** 角色对象 */
     private List<SysRole> roles;
@@ -129,7 +127,6 @@ public class SysUser extends BaseEntity
         this.deptId = deptId;
     }
 
-    @Xss(message = "用户昵称不能包含脚本字符")
     @Size(min = 0, max = 30, message = "用户昵称长度不能超过30个字符")
     public String getNickName()
     {
@@ -141,7 +138,6 @@ public class SysUser extends BaseEntity
         this.nickName = nickName;
     }
 
-    @Xss(message = "用户账号不能包含脚本字符")
     @NotBlank(message = "用户账号不能为空")
     @Size(min = 0, max = 30, message = "用户账号长度不能超过30个字符")
     public String getUserName()
@@ -247,16 +243,6 @@ public class SysUser extends BaseEntity
         this.loginDate = loginDate;
     }
 
-    public SysDept getDept()
-    {
-        return dept;
-    }
-
-    public void setDept(SysDept dept)
-    {
-        this.dept = dept;
-    }
-
     public List<SysRole> getRoles()
     {
         return roles;
@@ -318,7 +304,6 @@ public class SysUser extends BaseEntity
             .append("updateBy", getUpdateBy())
             .append("updateTime", getUpdateTime())
             .append("remark", getRemark())
-            .append("dept", getDept())
             .toString();
     }
 }
