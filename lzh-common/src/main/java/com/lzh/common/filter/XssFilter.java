@@ -59,14 +59,13 @@ public class XssFilter implements Filter
     {
         String url = request.getServletPath();
         String method = request.getMethod();
-        //都不过滤
-        return true;
+
         // GET DELETE 不过滤
-//        if (method == null || HttpMethod.GET.matches(method) || HttpMethod.DELETE.matches(method))
-//        {
-//            return true;
-//        }
-//        return StringUtils.matches(url, excludes);
+        if (method == null || HttpMethod.GET.matches(method) || HttpMethod.DELETE.matches(method))
+        {
+            return true;
+        }
+        return StringUtils.matches(url, excludes);
     }
 
     @Override

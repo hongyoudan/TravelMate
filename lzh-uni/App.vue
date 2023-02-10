@@ -14,8 +14,4 @@
 
 <style lang="scss">
 	@import "@/uni_modules/uview-ui/index.scss";
-
-	page {
-		padding: 10px 10px 0 10px;
-	}
 </style>
