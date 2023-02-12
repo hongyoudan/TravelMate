@@ -11,12 +11,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="introduction"    column="introduction"    />
         <result property="content"    column="content"    />
         <result property="type"    column="type"    />
+        <result property="isDisplay"    column="is_display"    />
         <result property="createTime"    column="create_time"    />
         <result property="updateTime"    column="update_time"    />
     </resultMap>
 
     <sql id="selectUniArticleVo">
-        select id, title, img_url, introduction, content, type, create_time, update_time from uni_article
+        select id, title, img_url, introduction, content, type, is_display, create_time, update_time from uni_article
     </sql>
 
     <select id="selectUniArticleList" parameterType="UniArticle" resultMap="UniArticleResult">
@@ -27,7 +28,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="introduction != null  and introduction != ''"> and introduction = #{introduction}</if>
             <if test="content != null  and content != ''"> and content = #{content}</if>
             <if test="type != null  and type != ''"> and type = #{type}</if>
+            <if test="isDisplay != null  and isDisplay != ''"> and is_display = #{isDisplay}</if>
         </where>
+        order by create_time desc
     </select>
     
     <select id="selectUniArticleById" parameterType="Integer" resultMap="UniArticleResult">
@@ -43,6 +46,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="introduction != null and introduction != ''">introduction,</if>
             <if test="content != null and content != ''">content,</if>
             <if test="type != null and type != ''">type,</if>
+            <if test="isDisplay != null and isDisplay != ''">is_display,</if>
             <if test="createTime != null">create_time,</if>
             <if test="updateTime != null">update_time,</if>
          </trim>
@@ -52,6 +56,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="introduction != null and introduction != ''">#{introduction},</if>
             <if test="content != null and content != ''">#{content},</if>
             <if test="type != null and type != ''">#{type},</if>
+            <if test="isDisplay != null and isDisplay != ''">#{isDisplay},</if>
             <if test="createTime != null">#{createTime},</if>
             <if test="updateTime != null">#{updateTime},</if>
          </trim>
@@ -65,6 +70,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="introduction != null and introduction != ''">introduction = #{introduction},</if>
             <if test="content != null and content != ''">content = #{content},</if>
             <if test="type != null and type != ''">type = #{type},</if>
+            <if test="isDisplay != null and isDisplay != ''">is_display = #{isDisplay},</if>
             <if test="createTime != null">create_time = #{createTime},</if>
             <if test="updateTime != null">update_time = #{updateTime},</if>
         </trim>

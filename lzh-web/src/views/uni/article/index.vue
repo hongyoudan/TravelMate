@@ -10,7 +10,6 @@
         />
       </el-form-item>
       <el-form-item label="文章类型" prop="type">
-
         <el-select
           v-model="queryParams.type"
           placeholder="文章类型"
@@ -18,7 +17,22 @@
           style="width: 140px"
         >
           <el-option
-            v-for="dict in options"
+            v-for="dict in typeOptions"
+            :key="dict.value"
+            :label="dict.label"
+            :value="dict.value"
+          />
+        </el-select>
+      </el-form-item>
+      <el-form-item label="首页展示" prop="isDisplay">
+        <el-select
+          v-model="queryParams.isDisplay"
+          placeholder="是否首页展示"
+          clearable
+          style="width: 140px"
+        >
+          <el-option
+            v-for="dict in displayOptions"
             :key="dict.value"
             :label="dict.label"
             :value="dict.value"
@@ -89,13 +103,19 @@
       </el-table-column>
       <el-table-column label="文章简介" align="center" prop="introduction" :show-overflow-tooltip="true"/>
       <el-table-column label="内容" align="center" prop="content" :show-overflow-tooltip="true"/>
-      <el-table-column label="类型" align="center" prop="type" width="200">
+      <el-table-column label="类型" align="center" prop="type" width="150">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.type==='0'" >官方攻略</el-tag>
           <el-tag v-else-if="scope.row.type==='1'" type="warning">热门活动</el-tag>
           <el-tag v-else-if="scope.row.type==='2'" type="danger">头条资讯</el-tag>
           <el-tag v-else-if="scope.row.type==='3'" type="success">热门资讯</el-tag>
           <el-tag v-else type="info">未知类型</el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column label="首页展示" align="center" prop="isDisplay" width="200">
+        <template slot-scope="scope">
+          <el-tag v-if="scope.row.isDisplay==='0'" type="error">不展示</el-tag>
+          <el-tag v-else type="success">展示</el-tag>
         </template>
       </el-table-column>
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width" width="150">
@@ -135,7 +155,17 @@
         <el-form-item label="类型" prop="type">
           <el-select v-model="form.type" placeholder="请选择文章类型">
             <el-option
-              v-for="item in options"
+              v-for="item in typeOptions"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="首页展示" prop="isDisplay">
+          <el-select v-model="form.isDisplay" placeholder="请选择是否在首页展示">
+            <el-option
+              v-for="item in displayOptions"
               :key="item.value"
               :label="item.label"
               :value="item.value">
@@ -192,16 +222,18 @@ export default {
         title: '',
         content: '',
         type: '',
+        isDisplay:''
       },
       // 表单参数
       form: {
         title:'',
         type:'',
+        isDisplay:'',
         imgUrl:'',
         introduction:'',
         content:''
       },
-      options: [{
+      typeOptions: [{
         value: '0',
         label: '官方攻略'
       }, {
@@ -213,6 +245,13 @@ export default {
       }, {
         value: '3',
         label: '热门资讯'
+      }],
+      displayOptions: [{
+        value: '0',
+        label: '不展示'
+      }, {
+        value: '1',
+        label: '展示'
       }],
       // 表单校验
       rules: {

@@ -38,6 +38,10 @@ public class UniArticle extends BaseEntity
     @Excel(name = "文章类型 0 官方攻略 1 热门活动 2 头条资讯 3 热门资讯")
     private String type;
 
+    /** 是否在首页展示 0 不展示 1 展示 */
+    @Excel(name = "是否在首页展示 0 不展示 1 展示")
+    private String isDisplay;
+
     public void setId(Integer id) 
     {
         this.id = id;
@@ -93,17 +97,24 @@ public class UniArticle extends BaseEntity
         return type;
     }
 
+    public String getIsDisplay() {
+        return isDisplay;
+    }
+
+    public void setIsDisplay(String isDisplay) {
+        this.isDisplay = isDisplay;
+    }
+
     @Override
     public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("id", getId())
-            .append("title", getTitle())
-            .append("imgUrl", getImgUrl())
-            .append("introduction", getIntroduction())
-            .append("content", getContent())
-            .append("type", getType())
-            .append("createTime", getCreateTime())
-            .append("updateTime", getUpdateTime())
-            .toString();
+        return "UniArticle{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", introduction='" + introduction + '\'' +
+                ", content='" + content + '\'' +
+                ", type='" + type + '\'' +
+                ", isDisplay='" + isDisplay + '\'' +
+                '}';
     }
 }

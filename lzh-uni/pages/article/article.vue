@@ -125,7 +125,6 @@
 			 * 点击图片跳转到景点详情页
 			 */
 			clickItem(id) {
-				console.log(id);
 				uni.navigateTo({
 					url: '/pages/article_detail/article_detail?id=' + id
 				})
