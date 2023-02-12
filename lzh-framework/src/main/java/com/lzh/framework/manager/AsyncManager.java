@@ -7,9 +7,7 @@ import com.lzh.common.utils.Threads;
 import com.lzh.common.utils.spring.SpringUtils;
 
 /**
- * 异步任务管理器
- * 
- * @author ruoyi
+ * @Description: 异步任务管理器
  */
 public class AsyncManager
 {

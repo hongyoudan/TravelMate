@@ -4,9 +4,7 @@ import com.lzh.common.exception.UtilException;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * sql操作工具类
- * 
- * @author ruoyi
+ * @Description: sql操作工具类
  */
 public class SqlUtil
 {

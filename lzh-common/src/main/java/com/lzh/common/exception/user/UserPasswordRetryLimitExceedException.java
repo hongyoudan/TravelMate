@@ -1,9 +1,7 @@
 package com.lzh.common.exception.user;
 
 /**
- * 用户错误最大次数异常类
- * 
- * @author ruoyi
+ * @Description: 用户错误最大次数异常类
  */
 public class UserPasswordRetryLimitExceedException extends UserException
 {

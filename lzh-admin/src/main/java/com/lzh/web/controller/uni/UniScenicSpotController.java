@@ -22,10 +22,8 @@ import com.lzh.common.utils.poi.ExcelUtil;
 import com.lzh.common.core.page.TableDataInfo;
 
 /**
- * 景点信息Controller
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Date: 2023-02-09
+ * @Description: 景点信息Controller
  */
 @RestController
 @RequestMapping("/system/scenic_spot")

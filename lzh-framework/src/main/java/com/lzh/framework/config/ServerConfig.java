@@ -5,9 +5,7 @@ import org.springframework.stereotype.Component;
 import com.lzh.common.utils.ServletUtils;
 
 /**
- * 服务相关配置
- * 
- * @author ruoyi
+ * @Description: 服务相关配置
  */
 @Component
 public class ServerConfig

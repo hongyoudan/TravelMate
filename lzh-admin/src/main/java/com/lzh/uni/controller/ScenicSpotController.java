@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Author: hayden
  * @Date: 2023-02-09
- * @Description:
+ * @Description: 景点业务控制器
  */
 @RestController
 @RequestMapping("/uni/scenic_spot")

@@ -17,9 +17,7 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.framework.security.context.PermissionContextHolder;
 
 /**
- * 数据过滤处理
- *
- * @author ruoyi
+ * @Description: 数据过滤处理
  */
 @Aspect
 @Component

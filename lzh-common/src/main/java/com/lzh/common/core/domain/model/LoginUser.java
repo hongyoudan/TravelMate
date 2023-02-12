@@ -8,9 +8,7 @@ import com.alibaba.fastjson2.annotation.JSONField;
 import com.lzh.common.core.domain.entity.SysUser;
 
 /**
- * 登录用户身份权限
- * 
- * @author ruoyi
+ * @Description: 登录用户身份权限
  */
 public class LoginUser implements UserDetails
 {

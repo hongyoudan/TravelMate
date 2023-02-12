@@ -4,10 +4,7 @@ import java.util.List;
 import com.lzh.uni.domain.UniBanner;
 
 /**
- * 轮播图Service接口
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Description: 轮播图Service接口
  */
 public interface IUniBannerService 
 {

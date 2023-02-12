@@ -25,9 +25,8 @@ import com.lzh.framework.web.service.TokenService;
 import com.lzh.system.service.ISysUserService;
 
 /**
- * 个人信息 业务处理
- * 
- * @author ruoyi
+ * @Date: 2023-02-09
+ * @Description: 个人信息 业务处理
  */
 @RestController
 @RequestMapping("/system/user/profile")

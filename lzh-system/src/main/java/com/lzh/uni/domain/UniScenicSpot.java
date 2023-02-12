@@ -6,10 +6,7 @@ import com.lzh.common.annotation.Excel;
 import com.lzh.common.core.domain.BaseEntity;
 
 /**
- * 景点信息对象 uni_scenic_spot
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Description: 景点信息对象 uni_scenic_spot
  */
 public class UniScenicSpot extends BaseEntity
 {

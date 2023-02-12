@@ -21,9 +21,7 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.common.utils.ip.IpUtils;
 
 /**
- * 限流处理
- *
- * @author ruoyi
+ * @Description: 限流处理
  */
 @Aspect
 @Component

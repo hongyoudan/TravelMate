@@ -1,9 +1,7 @@
 package com.lzh.common.constant;
 
 /**
- * 返回状态码
- * 
- * @author ruoyi
+ * @Description: 返回状态码
  */
 public class HttpStatus
 {

@@ -9,10 +9,7 @@ import com.lzh.uni.domain.UniArticle;
 import com.lzh.uni.service.IUniArticleService;
 
 /**
- * 文章Service业务层处理
- * 
- * @author lzh
- * @date 2023-02-10
+ * @Description: 文章Service业务层处理
  */
 @Service
 public class UniArticleServiceImpl implements IUniArticleService 

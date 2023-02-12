@@ -3,9 +3,7 @@ package com.lzh.framework.web.domain.server;
 import com.lzh.common.utils.Arith;
 
 /**
- * CPU相关信息
- * 
- * @author ruoyi
+ * @Description: CPU相关信息
  */
 public class Cpu
 {

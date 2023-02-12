@@ -3,9 +3,7 @@ package com.lzh.common.constant;
 import io.jsonwebtoken.Claims;
 
 /**
- * 通用常量信息
- * 
- * @author ruoyi
+ * @Description: 通用常量信息
  */
 public class Constants
 {

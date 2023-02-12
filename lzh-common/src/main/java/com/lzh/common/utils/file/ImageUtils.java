@@ -14,9 +14,7 @@ import com.lzh.common.constant.Constants;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 图片处理工具类
- *
- * @author ruoyi
+ * @Description: 图片处理工具类
  */
 public class ImageUtils
 {

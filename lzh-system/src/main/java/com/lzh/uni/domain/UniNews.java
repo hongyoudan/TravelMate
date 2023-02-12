@@ -6,10 +6,7 @@ import com.lzh.common.annotation.Excel;
 import com.lzh.common.core.domain.BaseEntity;
 
 /**
- * 要闻对象 uni_news
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Description: 要闻对象 uni_news
  */
 public class UniNews extends BaseEntity
 {

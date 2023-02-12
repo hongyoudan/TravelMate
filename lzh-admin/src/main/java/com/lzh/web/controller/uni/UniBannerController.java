@@ -16,10 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * 轮播图Controller
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Date: 2023-02-09
+ * @Description: 轮播图Controller
  */
 @RestController
 @RequestMapping("/system/banner")

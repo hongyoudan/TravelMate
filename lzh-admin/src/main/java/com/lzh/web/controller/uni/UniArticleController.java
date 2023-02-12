@@ -22,10 +22,8 @@ import com.lzh.common.utils.poi.ExcelUtil;
 import com.lzh.common.core.page.TableDataInfo;
 
 /**
- * 文章Controller
- * 
- * @author lzh
- * @date 2023-02-10
+ * @Date: 2023-02-09
+ * @Description: 文章Controller
  */
 @RestController
 @RequestMapping("/system/article")

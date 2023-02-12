@@ -16,9 +16,7 @@ import com.lzh.common.constant.Constants;
 import com.lzh.framework.interceptor.RepeatSubmitInterceptor;
 
 /**
- * 通用配置
- * 
- * @author ruoyi
+ * @Description: 通用配置
  */
 @Configuration
 public class ResourcesConfig implements WebMvcConfigurer

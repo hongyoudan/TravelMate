@@ -9,9 +9,7 @@ import com.lzh.common.constant.CacheConstants;
 import com.lzh.common.enums.LimitType;
 
 /**
- * 限流注解
- * 
- * @author ruoyi
+ * @Description: 限流注解
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

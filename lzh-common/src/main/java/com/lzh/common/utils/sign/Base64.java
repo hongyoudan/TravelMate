@@ -1,9 +1,7 @@
 package com.lzh.common.utils.sign;
 
 /**
- * Base64工具类
- * 
- * @author ruoyi
+ * @Description: Base64工具类
  */
 public final class Base64
 {

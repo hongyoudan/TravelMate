@@ -10,9 +10,7 @@ import org.apache.poi.ss.usermodel.IndexedColors;
 import com.lzh.common.utils.poi.ExcelHandlerAdapter;
 
 /**
- * 自定义导出Excel数据注解
- * 
- * @author ruoyi
+ * @Description: 自定义导出Excel数据注解
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

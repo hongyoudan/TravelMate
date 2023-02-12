@@ -21,9 +21,7 @@ import com.lzh.framework.security.handle.AuthenticationEntryPointImpl;
 import com.lzh.framework.security.handle.LogoutSuccessHandlerImpl;
 
 /**
- * spring security配置
- *
- * @author ruoyi
+ * @Description: spring security配置
  */
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter

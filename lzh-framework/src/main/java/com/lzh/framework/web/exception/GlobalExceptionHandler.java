@@ -16,9 +16,7 @@ import com.lzh.common.exception.ServiceException;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 全局异常处理器
- * 
- * @author ruoyi
+ * @Description: 全局异常处理器
  */
 @RestControllerAdvice
 public class GlobalExceptionHandler

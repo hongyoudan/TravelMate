@@ -8,9 +8,7 @@ import com.lzh.system.mapper.SysOperLogMapper;
 import com.lzh.system.service.ISysOperLogService;
 
 /**
- * 操作日志 服务层处理
- * 
- * @author ruoyi
+ * @Description: 操作日志 服务层处理
  */
 @Service
 public class SysOperLogServiceImpl implements ISysOperLogService

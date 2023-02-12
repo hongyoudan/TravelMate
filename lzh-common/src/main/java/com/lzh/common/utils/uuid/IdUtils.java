@@ -1,9 +1,7 @@
 package com.lzh.common.utils.uuid;
 
 /**
- * ID生成器工具类
- * 
- * @author ruoyi
+ * @Description: ID生成器工具类
  */
 public class IdUtils
 {

@@ -19,9 +19,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import com.lzh.common.annotation.Anonymous;
 
 /**
- * 设置Anonymous注解允许匿名访问的url
- * 
- * @author ruoyi
+ * @Description: 设置Anonymous注解允许匿名访问的url
  */
 @Configuration
 public class PermitAllUrlProperties implements InitializingBean, ApplicationContextAware

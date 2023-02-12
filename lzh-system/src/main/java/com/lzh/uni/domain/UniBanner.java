@@ -6,10 +6,7 @@ import com.lzh.common.annotation.Excel;
 import com.lzh.common.core.domain.BaseEntity;
 
 /**
- * 轮播图对象 uni_banner
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Description: 轮播图对象 uni_banner
  */
 public class UniBanner extends BaseEntity
 {

@@ -8,9 +8,7 @@ import com.lzh.common.core.domain.model.LoginUser;
 import com.lzh.common.exception.ServiceException;
 
 /**
- * 安全服务工具类
- * 
- * @author ruoyi
+ * @Description: 安全服务工具类
  */
 public class SecurityUtils
 {

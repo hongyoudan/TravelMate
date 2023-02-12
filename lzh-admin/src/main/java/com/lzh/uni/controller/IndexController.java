@@ -19,9 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @Author: hayden
  * @Date: 2023-02-09
- * @Description:
+ * @Description: 首页业务控制器
  */
 @RestController
 @RequestMapping("/uni")

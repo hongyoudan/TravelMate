@@ -1,9 +1,7 @@
 package com.lzh.common.enums;
 
 /**
- * 操作人类别
- * 
- * @author ruoyi
+ * @Description: 操作人类别
  */
 public enum OperatorType
 {

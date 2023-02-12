@@ -5,9 +5,7 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import com.lzh.common.utils.spring.SpringUtils;
 
 /**
- * 获取i18n资源文件
- * 
- * @author ruoyi
+ * @Description: 获取i18n资源文件
  */
 public class MessageUtils
 {

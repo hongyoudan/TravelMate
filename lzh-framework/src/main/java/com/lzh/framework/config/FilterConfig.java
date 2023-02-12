@@ -6,9 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import com.lzh.common.filter.RepeatableFilter;
 
 /**
- * Filter配置
- *
- * @author ruoyi
+ * @Description: Filter配置
  */
 @Configuration
 public class FilterConfig

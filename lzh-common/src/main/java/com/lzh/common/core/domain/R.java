@@ -4,9 +4,7 @@ import java.io.Serializable;
 import com.lzh.common.constant.HttpStatus;
 
 /**
- * 响应信息主体
- *
- * @author ruoyi
+ * @Description: 响应信息主体
  */
 public class R<T> implements Serializable
 {

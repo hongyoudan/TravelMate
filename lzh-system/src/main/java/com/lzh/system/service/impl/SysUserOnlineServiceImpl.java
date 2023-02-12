@@ -7,9 +7,7 @@ import com.lzh.system.domain.SysUserOnline;
 import com.lzh.system.service.ISysUserOnlineService;
 
 /**
- * 在线用户 服务层处理
- * 
- * @author ruoyi
+ * @Description: 在线用户 服务层处理
  */
 @Service
 public class SysUserOnlineServiceImpl implements ISysUserOnlineService

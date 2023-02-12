@@ -28,9 +28,7 @@ import com.lzh.system.mapper.SysUserRoleMapper;
 import com.lzh.system.service.ISysUserService;
 
 /**
- * 用户 业务层处理
- * 
- * @author ruoyi
+ * @Description: 用户 业务层处理
  */
 @Service
 public class SysUserServiceImpl implements ISysUserService

@@ -4,10 +4,7 @@ import java.util.List;
 import com.lzh.uni.domain.UniScenicSpot;
 
 /**
- * 景点信息Mapper接口
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Description: 景点信息Mapper接口
  */
 public interface UniScenicSpotMapper 
 {

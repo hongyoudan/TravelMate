@@ -4,9 +4,7 @@ import com.lzh.common.core.domain.model.LoginUser;
 import com.lzh.system.domain.SysUserOnline;
 
 /**
- * 在线用户 服务层
- * 
- * @author ruoyi
+ * @Description: 在线用户 服务层
  */
 public interface ISysUserOnlineService
 {

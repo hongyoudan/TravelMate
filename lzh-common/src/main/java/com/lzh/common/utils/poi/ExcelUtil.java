@@ -85,9 +85,7 @@ import com.lzh.common.utils.file.ImageUtils;
 import com.lzh.common.utils.reflect.ReflectUtils;
 
 /**
- * Excel相关处理
- * 
- * @author ruoyi
+ * @Description: Excel相关处理
  */
 public class ExcelUtil<T>
 {

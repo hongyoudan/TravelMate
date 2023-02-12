@@ -21,9 +21,7 @@ import com.lzh.framework.security.context.AuthenticationContextHolder;
 import com.lzh.system.service.ISysUserService;
 
 /**
- * 登录校验方法
- * 
- * @author ruoyi
+ * @Description: 登录校验方法
  */
 @Component
 public class SysLoginService

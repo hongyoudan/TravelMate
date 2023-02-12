@@ -3,9 +3,7 @@ package com.lzh.framework.web.domain.server;
 import com.lzh.common.utils.Arith;
 
 /**
- * 內存相关信息
- * 
- * @author ruoyi
+ * @Description: 內存相关信息
  */
 public class Mem
 {

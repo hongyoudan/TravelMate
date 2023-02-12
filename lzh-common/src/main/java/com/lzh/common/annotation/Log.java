@@ -9,10 +9,7 @@ import com.lzh.common.enums.BusinessType;
 import com.lzh.common.enums.OperatorType;
 
 /**
- * 自定义操作日志记录注解
- * 
- * @author ruoyi
- *
+ * @Description: 自定义操作日志记录注解
  */
 @Target({ ElementType.PARAMETER, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)

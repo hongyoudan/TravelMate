@@ -4,9 +4,7 @@ import java.util.List;
 import com.lzh.common.core.domain.entity.SysRole;
 
 /**
- * 角色表 数据层
- * 
- * @author ruoyi
+ * @Description: 角色表 数据层
  */
 public interface SysRoleMapper
 {

@@ -9,10 +9,7 @@ import com.lzh.uni.domain.UniScenicSpot;
 import com.lzh.uni.service.IUniScenicSpotService;
 
 /**
- * 景点信息Service业务层处理
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Description: 景点信息Service业务层处理
  */
 @Service
 public class UniScenicSpotServiceImpl implements IUniScenicSpotService 

@@ -4,9 +4,7 @@ import java.util.List;
 import com.lzh.common.core.domain.entity.SysUser;
 
 /**
- * 用户 业务层
- * 
- * @author ruoyi
+ * @Description: 用户 业务层
  */
 public interface ISysUserService
 {

@@ -12,9 +12,7 @@ import com.lzh.common.annotation.Excels;
 import com.lzh.common.core.domain.BaseEntity;
 
 /**
- * 用户对象 sys_user
- * 
- * @author ruoyi
+ * @Description: 用户对象 sys_user
  */
 public class SysUser extends BaseEntity
 {

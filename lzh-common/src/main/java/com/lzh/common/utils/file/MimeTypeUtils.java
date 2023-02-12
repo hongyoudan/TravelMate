@@ -1,9 +1,7 @@
 package com.lzh.common.utils.file;
 
 /**
- * 媒体类型工具类
- * 
- * @author ruoyi
+ * @Description: 媒体类型工具类
  */
 public class MimeTypeUtils
 {

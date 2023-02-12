@@ -3,9 +3,7 @@ package com.lzh.system.domain.vo;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 路由显示信息
- * 
- * @author ruoyi
+ * @Description: 路由显示信息
  */
 public class MetaVo
 {

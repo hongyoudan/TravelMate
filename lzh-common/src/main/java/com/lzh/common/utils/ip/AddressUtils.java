@@ -10,9 +10,7 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.common.utils.http.HttpUtils;
 
 /**
- * 获取地址类
- * 
- * @author ruoyi
+ * @Description: 获取地址类
  */
 public class AddressUtils
 {

@@ -10,9 +10,7 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.framework.security.context.PermissionContextHolder;
 
 /**
- * RuoYi首创 自定义权限实现，ss取自SpringSecurity首字母
- * 
- * @author ruoyi
+ * @Description: 自定义权限实现
  */
 @Service("ss")
 public class PermissionService

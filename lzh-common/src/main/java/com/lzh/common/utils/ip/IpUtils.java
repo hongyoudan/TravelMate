@@ -6,9 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 获取IP方法
- * 
- * @author ruoyi
+ * @Description: 获取IP方法
  */
 public class IpUtils
 {

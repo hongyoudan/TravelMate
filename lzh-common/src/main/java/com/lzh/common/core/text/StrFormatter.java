@@ -3,9 +3,7 @@ package com.lzh.common.core.text;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 字符串格式化
- * 
- * @author ruoyi
+ * @Description: 字符串格式化
  */
 public class StrFormatter
 {

@@ -4,10 +4,7 @@ import java.util.List;
 import com.lzh.uni.domain.UniNews;
 
 /**
- * 要闻Mapper接口
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Description: 要闻Mapper接口
  */
 public interface UniNewsMapper 
 {

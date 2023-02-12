@@ -4,9 +4,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * 角色和菜单关联 sys_role_menu
- * 
- * @author ruoyi
+ * @Description: 角色和菜单关联 sys_role_menu
  */
 public class SysRoleMenu
 {

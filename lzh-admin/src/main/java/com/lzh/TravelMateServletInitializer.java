@@ -4,9 +4,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
- * web容器中进行部署
- * 
- * @author ruoyi
+ * @Date: 2023-02-09
+ * @Description: web容器中进行部署
  */
 public class TravelMateServletInitializer extends SpringBootServletInitializer
 {

@@ -11,9 +11,7 @@ import com.lzh.system.service.ISysMenuService;
 import com.lzh.system.service.ISysRoleService;
 
 /**
- * 用户权限处理
- * 
- * @author ruoyi
+ * @Description: 用户权限处理
  */
 @Component
 public class SysPermissionService

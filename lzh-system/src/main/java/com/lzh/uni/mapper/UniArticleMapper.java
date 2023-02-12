@@ -4,10 +4,7 @@ import java.util.List;
 import com.lzh.uni.domain.UniArticle;
 
 /**
- * 文章Mapper接口
- * 
- * @author lzh
- * @date 2023-02-10
+ * @Description: 文章Mapper接口
  */
 public interface UniArticleMapper 
 {

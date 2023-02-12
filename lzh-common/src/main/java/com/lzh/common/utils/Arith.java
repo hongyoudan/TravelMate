@@ -4,9 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * 精确的浮点数运算
- * 
- * @author ruoyi
+ * @Description: 精确的浮点数运算
  */
 public class Arith
 {

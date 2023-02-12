@@ -22,9 +22,8 @@ import com.lzh.common.utils.file.FileUtils;
 import com.lzh.framework.config.ServerConfig;
 
 /**
- * 通用请求处理
- * 
- * @author ruoyi
+ * @Date: 2023-02-09
+ * @Description: 通用请求处理
  */
 @RestController
 @RequestMapping("/common")

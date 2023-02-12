@@ -1,9 +1,7 @@
 package com.lzh.common.enums;
 
 /**
- * 业务操作类型
- * 
- * @author ruoyi
+ * @Description: 业务操作类型
  */
 public enum BusinessType
 {

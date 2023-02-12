@@ -22,9 +22,7 @@ import oshi.software.os.OperatingSystem;
 import oshi.util.Util;
 
 /**
- * 服务器相关信息
- * 
- * @author ruoyi
+ * @Description: 服务器相关信息
  */
 public class Server
 {

@@ -4,9 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * 读取项目相关配置
- * 
- * @author ruoyi
+ * @Description: 读取项目相关配置
  */
 @Component
 @ConfigurationProperties(prefix = "lzh")

@@ -1,9 +1,7 @@
 package com.lzh.system.domain;
 
 /**
- * 当前在线会话
- * 
- * @author ruoyi
+ * @Description: 当前在线会话
  */
 public class SysUserOnline
 {

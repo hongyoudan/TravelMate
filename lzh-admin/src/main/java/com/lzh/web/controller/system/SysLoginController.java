@@ -18,9 +18,8 @@ import com.lzh.framework.web.service.SysPermissionService;
 import com.lzh.system.service.ISysMenuService;
 
 /**
- * 登录验证
- * 
- * @author ruoyi
+ * @Date: 2023-02-09
+ * @Description: 登录验证
  */
 @RestController
 public class SysLoginController

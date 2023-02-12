@@ -31,9 +31,8 @@ import com.lzh.system.service.ISysRoleService;
 import com.lzh.system.service.ISysUserService;
 
 /**
- * 用户信息
- * 
- * @author ruoyi
+ * @Date: 2023-02-09
+ * @Description: 用户信息
  */
 @RestController
 @RequestMapping("/system/user")

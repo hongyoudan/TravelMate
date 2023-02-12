@@ -20,9 +20,7 @@ import com.lzh.common.utils.uuid.IdUtils;
 import org.apache.commons.io.FilenameUtils;
 
 /**
- * 文件处理工具类
- * 
- * @author ruoyi
+ * @Description: 文件处理工具类
  */
 public class FileUtils
 {

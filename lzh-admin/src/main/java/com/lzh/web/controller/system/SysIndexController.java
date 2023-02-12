@@ -17,9 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * 首页
- *
- * @author ruoyi
+ * @Date: 2023-02-09
+ * @Description: 首页控制器
  */
 @RestController
 public class SysIndexController {

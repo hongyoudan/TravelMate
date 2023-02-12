@@ -9,10 +9,7 @@ import com.lzh.uni.domain.UniBanner;
 import com.lzh.uni.service.IUniBannerService;
 
 /**
- * 轮播图Service业务层处理
- * 
- * @author lzh
- * @date 2023-02-09
+ * @Description: 轮播图Service业务层处理
  */
 @Service
 public class UniBannerServiceImpl implements IUniBannerService 

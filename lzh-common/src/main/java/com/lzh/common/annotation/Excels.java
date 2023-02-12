@@ -6,9 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Excel注解集
- * 
- * @author ruoyi
+ * @Description: Excel注解集
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

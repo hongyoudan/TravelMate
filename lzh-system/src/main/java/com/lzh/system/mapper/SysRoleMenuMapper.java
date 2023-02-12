@@ -4,9 +4,7 @@ import java.util.List;
 import com.lzh.system.domain.SysRoleMenu;
 
 /**
- * 角色与菜单关联表 数据层
- * 
- * @author ruoyi
+ * @Description: 角色与菜单关联表 数据层
  */
 public interface SysRoleMenuMapper
 {

@@ -17,9 +17,7 @@ import com.lzh.framework.manager.AsyncManager;
 import com.lzh.framework.security.context.AuthenticationContextHolder;
 
 /**
- * 登录密码方法
- * 
- * @author ruoyi
+ * @Description: 登录密码方法
  */
 @Component
 public class SysPasswordService

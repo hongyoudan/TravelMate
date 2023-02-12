@@ -18,9 +18,7 @@ import com.lzh.framework.manager.AsyncManager;
 import com.lzh.framework.web.service.TokenService;
 
 /**
- * 自定义退出处理类 返回成功
- * 
- * @author ruoyi
+ * @Description: 自定义退出处理类 返回成功
  */
 @Configuration
 public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler

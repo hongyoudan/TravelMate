@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @Author: hayden
  * @Date: 2023-02-10
- * @Description:
+ * @Description: 文章业务控制器
  */
 @RestController
 @RequestMapping("/uni/article")
