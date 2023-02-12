@@ -3,9 +3,7 @@ package com.lzh.common.utils.html;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 转义和反转义工具类
- * 
- * @author ruoyi
+ * @Description: 转义和反转义工具类
  */
 public class EscapeUtil
 {

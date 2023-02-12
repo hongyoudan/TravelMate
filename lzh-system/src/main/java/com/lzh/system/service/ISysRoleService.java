@@ -6,9 +6,7 @@ import com.lzh.common.core.domain.entity.SysRole;
 import com.lzh.system.domain.SysUserRole;
 
 /**
- * 角色业务层
- * 
- * @author ruoyi
+ * @Description: 角色业务层
  */
 public interface ISysRoleService
 {

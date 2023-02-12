@@ -18,9 +18,8 @@ import com.lzh.framework.web.service.SysPermissionService;
 import com.lzh.system.service.ISysMenuService;
 
 /**
- * 登录验证
- * 
- * @author ruoyi
+ * @Date: 2023-02-09
+ * @Description: 登录验证
  */
 @RestController
 public class SysLoginController
@@ -45,8 +44,7 @@ public class SysLoginController
     {
         AjaxResult ajax = AjaxResult.success();
         // 生成令牌
-        String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getCode(),
-                loginBody.getUuid());
+        String token = loginService.login(loginBody.getUsername(), loginBody.getPassword(), loginBody.getUuid());
         ajax.put(Constants.TOKEN, token);
         return ajax;
     }

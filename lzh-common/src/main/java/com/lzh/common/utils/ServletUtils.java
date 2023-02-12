@@ -18,9 +18,7 @@ import com.lzh.common.constant.Constants;
 import com.lzh.common.core.text.Convert;
 
 /**
- * 客户端工具类
- * 
- * @author ruoyi
+ * @Description: 客户端工具类
  */
 public class ServletUtils
 {

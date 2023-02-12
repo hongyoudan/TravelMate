@@ -17,9 +17,7 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.framework.web.service.TokenService;
 
 /**
- * token过滤器 验证token有效性
- * 
- * @author ruoyi
+ * @Description: token过滤器 验证token有效性
  */
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter

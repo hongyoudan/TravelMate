@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Tree基类
- * 
- * @author ruoyi
+ * @Description: Tree基类
  */
 public class TreeEntity extends BaseEntity
 {

@@ -1,11 +1,8 @@
 package com.lzh.common.enums;
 
 /**
- * 限流类型
- *
- * @author ruoyi
+ * @Description: 限流类型
  */
-
 public enum LimitType
 {
     /**

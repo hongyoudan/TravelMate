@@ -14,13 +14,10 @@ import com.lzh.common.exception.user.UserPasswordRetryLimitExceedException;
 import com.lzh.common.utils.MessageUtils;
 import com.lzh.common.utils.SecurityUtils;
 import com.lzh.framework.manager.AsyncManager;
-import com.lzh.framework.manager.factory.AsyncFactory;
 import com.lzh.framework.security.context.AuthenticationContextHolder;
 
 /**
- * 登录密码方法
- * 
- * @author ruoyi
+ * @Description: 登录密码方法
  */
 @Component
 public class SysPasswordService
@@ -60,16 +57,13 @@ public class SysPasswordService
 
         if (retryCount >= Integer.valueOf(maxRetryCount).intValue())
         {
-            AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL,
-                    MessageUtils.message("user.password.retry.limit.exceed", maxRetryCount, lockTime)));
             throw new UserPasswordRetryLimitExceedException(maxRetryCount, lockTime);
         }
 
         if (!matches(user, password))
         {
             retryCount = retryCount + 1;
-            AsyncManager.me().execute(AsyncFactory.recordLogininfor(username, Constants.LOGIN_FAIL,
-                    MessageUtils.message("user.password.retry.limit.count", retryCount)));
+
             redisCache.setCacheObject(getCacheKey(username), retryCount, lockTime, TimeUnit.MINUTES);
             throw new UserPasswordNotMatchException();
         }

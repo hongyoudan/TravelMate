@@ -25,9 +25,7 @@ import com.lzh.framework.config.properties.DruidProperties;
 import com.lzh.framework.datasource.DynamicDataSource;
 
 /**
- * druid 配置多数据源
- * 
- * @author ruoyi
+ * @Description: druid 配置多数据源
  */
 @Configuration
 public class DruidConfig

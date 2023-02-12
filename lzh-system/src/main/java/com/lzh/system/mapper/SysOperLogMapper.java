@@ -4,9 +4,7 @@ import java.util.List;
 import com.lzh.system.domain.SysOperLog;
 
 /**
- * 操作日志 数据层
- * 
- * @author ruoyi
+ * @Description: 操作日志 数据层
  */
 public interface SysOperLogMapper
 {

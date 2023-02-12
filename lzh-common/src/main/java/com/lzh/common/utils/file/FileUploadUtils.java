@@ -16,9 +16,7 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.common.utils.uuid.Seq;
 
 /**
- * 文件上传工具类
- *
- * @author ruoyi
+ * @Description: 文件上传工具类
  */
 public class FileUploadUtils
 {

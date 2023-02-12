@@ -25,9 +25,7 @@ import org.springframework.util.ClassUtils;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * Mybatis支持*匹配扫描包
- * 
- * @author ruoyi
+ * @Description: Mybatis支持*匹配扫描包
  */
 @Configuration
 public class MyBatisConfig

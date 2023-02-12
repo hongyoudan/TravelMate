@@ -10,9 +10,7 @@ import com.lzh.common.utils.StringUtils;
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
- * 类型转换器
- *
- * @author ruoyi
+ * @Description: 类型转换器
  */
 public class Convert
 {

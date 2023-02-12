@@ -1,9 +1,7 @@
 package com.lzh.common.constant;
 
 /**
- * 用户常量信息
- * 
- * @author ruoyi
+ * @Description: 用户常量信息
  */
 public class UserConstants
 {

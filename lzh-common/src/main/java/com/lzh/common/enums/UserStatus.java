@@ -1,9 +1,7 @@
 package com.lzh.common.enums;
 
 /**
- * 用户状态
- * 
- * @author ruoyi
+ * @Description: 用户状态
  */
 public enum UserStatus
 {

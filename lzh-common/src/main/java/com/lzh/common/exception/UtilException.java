@@ -1,9 +1,7 @@
 package com.lzh.common.exception;
 
 /**
- * 工具类异常
- * 
- * @author ruoyi
+ * @Description: 工具类异常
  */
 public class UtilException extends RuntimeException
 {

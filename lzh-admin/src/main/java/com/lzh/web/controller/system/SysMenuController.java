@@ -22,9 +22,8 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.system.service.ISysMenuService;
 
 /**
- * 菜单信息
- * 
- * @author ruoyi
+ * @Date: 2023-02-09
+ * @Description: 菜单信息
  */
 @RestController
 @RequestMapping("/system/menu")

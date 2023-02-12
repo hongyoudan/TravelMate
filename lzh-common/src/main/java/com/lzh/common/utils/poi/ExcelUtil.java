@@ -78,7 +78,6 @@ import com.lzh.common.core.domain.AjaxResult;
 import com.lzh.common.core.text.Convert;
 import com.lzh.common.exception.UtilException;
 import com.lzh.common.utils.DateUtils;
-import com.lzh.common.utils.DictUtils;
 import com.lzh.common.utils.StringUtils;
 import com.lzh.common.utils.file.FileTypeUtils;
 import com.lzh.common.utils.file.FileUtils;
@@ -86,9 +85,7 @@ import com.lzh.common.utils.file.ImageUtils;
 import com.lzh.common.utils.reflect.ReflectUtils;
 
 /**
- * Excel相关处理
- * 
- * @author ruoyi
+ * @Description: Excel相关处理
  */
 public class ExcelUtil<T>
 {
@@ -449,10 +446,6 @@ public class ExcelUtil<T>
                         else if (StringUtils.isNotEmpty(attr.readConverterExp()))
                         {
                             val = reverseByExp(Convert.toStr(val), attr.readConverterExp(), attr.separator());
-                        }
-                        else if (StringUtils.isNotEmpty(attr.dictType()))
-                        {
-                            val = reverseDictByExp(Convert.toStr(val), attr.dictType(), attr.separator());
                         }
                         else if (!attr.handler().equals(ExcelHandlerAdapter.class))
                         {
@@ -1032,10 +1025,6 @@ public class ExcelUtil<T>
                 {
                     cell.setCellValue(convertByExp(Convert.toStr(value), readConverterExp, separator));
                 }
-                else if (StringUtils.isNotEmpty(dictType) && StringUtils.isNotNull(value))
-                {
-                    cell.setCellValue(convertDictByExp(Convert.toStr(value), dictType, separator));
-                }
                 else if (value instanceof BigDecimal && -1 != attr.scale())
                 {
                     cell.setCellValue((((BigDecimal) value).setScale(attr.scale(), attr.roundingMode())).doubleValue());
@@ -1220,32 +1209,6 @@ public class ExcelUtil<T>
             }
         }
         return StringUtils.stripEnd(propertyString.toString(), separator);
-    }
-
-    /**
-     * 解析字典值
-     * 
-     * @param dictValue 字典值
-     * @param dictType 字典类型
-     * @param separator 分隔符
-     * @return 字典标签
-     */
-    public static String convertDictByExp(String dictValue, String dictType, String separator)
-    {
-        return DictUtils.getDictLabel(dictType, dictValue, separator);
-    }
-
-    /**
-     * 反向解析值字典值
-     * 
-     * @param dictLabel 字典标签
-     * @param dictType 字典类型
-     * @param separator 分隔符
-     * @return 字典值
-     */
-    public static String reverseDictByExp(String dictLabel, String dictType, String separator)
-    {
-        return DictUtils.getDictValue(dictType, dictLabel, separator);
     }
 
     /**

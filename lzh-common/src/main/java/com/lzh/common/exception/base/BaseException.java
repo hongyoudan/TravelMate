@@ -4,9 +4,7 @@ import com.lzh.common.utils.MessageUtils;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 基础异常
- * 
- * @author ruoyi
+ * @Description: 基础异常
  */
 public class BaseException extends RuntimeException
 {

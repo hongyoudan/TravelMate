@@ -9,9 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * Entity基类
- * 
- * @author ruoyi
+ * @Description: Entity基类
  */
 public class BaseEntity implements Serializable
 {

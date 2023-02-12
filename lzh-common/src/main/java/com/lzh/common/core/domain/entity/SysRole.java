@@ -11,9 +11,7 @@ import com.lzh.common.annotation.Excel.ColumnType;
 import com.lzh.common.core.domain.BaseEntity;
 
 /**
- * 角色表 sys_role
- * 
- * @author ruoyi
+ * @Description: 角色表 sys_role
  */
 public class SysRole extends BaseEntity
 {

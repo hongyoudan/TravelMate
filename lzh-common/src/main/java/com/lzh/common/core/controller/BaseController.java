@@ -22,9 +22,7 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.common.utils.sql.SqlUtil;
 
 /**
- * web层通用数据处理
- * 
- * @author ruoyi
+ * @Description: web层通用数据处理
  */
 public class BaseController
 {

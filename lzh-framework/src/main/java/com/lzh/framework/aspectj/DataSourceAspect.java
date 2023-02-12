@@ -16,9 +16,7 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.framework.datasource.DynamicDataSourceContextHolder;
 
 /**
- * 多数据源处理
- * 
- * @author ruoyi
+ * @Description: 多数据源处理
  */
 @Aspect
 @Order(1)

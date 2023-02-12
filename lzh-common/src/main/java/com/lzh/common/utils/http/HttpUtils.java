@@ -23,9 +23,7 @@ import com.lzh.common.constant.Constants;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 通用http发送方法
- * 
- * @author ruoyi
+ * @Description: 通用http发送方法
  */
 public class HttpUtils
 {

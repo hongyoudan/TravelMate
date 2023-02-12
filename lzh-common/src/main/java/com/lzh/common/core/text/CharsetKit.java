@@ -5,9 +5,7 @@ import java.nio.charset.StandardCharsets;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 字符集工具类
- * 
- * @author ruoyi
+ * @Description: 字符集工具类
  */
 public class CharsetKit
 {

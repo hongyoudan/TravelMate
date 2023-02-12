@@ -67,7 +67,7 @@
       <el-table-column label="手机" prop="phonenumber" :show-overflow-tooltip="true" />
       <el-table-column label="状态" align="center" prop="status">
         <template slot-scope="scope">
-          <dict-tag :options="dict.type.sys_normal_disable" :value="scope.row.status"/>
+          <dict-tag :options="statusOptions" :value="scope.row.status"/>
         </template>
       </el-table-column>
       <el-table-column label="创建时间" align="center" prop="createTime" width="180">
@@ -105,10 +105,16 @@ import selectUser from "./selectUser";
 
 export default {
   name: "AuthUser",
-  dicts: ['sys_normal_disable'],
   components: { selectUser },
   data() {
     return {
+      statusOptions: [{
+        value: '0',
+        label: '正常'
+      }, {
+        value: '1',
+        label: '停用'
+      }],
       // 遮罩层
       loading: true,
       // 选中用户组

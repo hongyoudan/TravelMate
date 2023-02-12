@@ -1,9 +1,7 @@
 package com.lzh.common.utils.poi;
 
 /**
- * Excel数据格式处理适配器
- * 
- * @author ruoyi
+ * @Description: Excel数据格式处理适配器
  */
 public interface ExcelHandlerAdapter
 {

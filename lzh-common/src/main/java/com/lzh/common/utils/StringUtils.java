@@ -11,9 +11,7 @@ import com.lzh.common.constant.Constants;
 import com.lzh.common.core.text.StrFormatter;
 
 /**
- * 字符串工具类
- * 
- * @author ruoyi
+ * @Description: 字符串工具类
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils
 {

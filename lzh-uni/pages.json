@@ -3,8 +3,30 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "旅伴"
+				"navigationBarTitleText": "旅伴",
+				"enablePullDownRefresh": true
 			}
+		},
+		{
+			"path": "pages/article/article",
+			"style": {
+				"navigationBarTitleText": "文章",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/scenic_spot_detail/scenic_spot_detail",
+			"style": {
+				"navigationBarTitleText": "景点详情",
+				"enablePullDownRefresh": true
+			}
+
+		}, {
+			"path": "pages/article_detail/article_detail",
+			"style": {
+				"navigationBarTitleText": "文章详情",
+				"enablePullDownRefresh": true
+			}
+
 		}
 	],
 	"globalStyle": {
@@ -12,6 +34,23 @@
 		"navigationBarTitleText": "旅伴",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#000000",
+		"selectedColor": "#F07D7D",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/images/home@not_selected.png",
+				"selectedIconPath": "static/images/home@selected.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/article/article",
+				"iconPath": "static/images/article@not_selected.png",
+				"selectedIconPath": "static/images/article@selected.png",
+				"text": "文章"
+			}
+		]
 	},
 	"easycom": {
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"

@@ -13,9 +13,7 @@ import com.lzh.common.utils.http.HttpHelper;
 import com.lzh.common.constant.Constants;
 
 /**
- * 构建可重复读取inputStream的request
- * 
- * @author ruoyi
+ * @Description: 构建可重复读取inputStream的request
  */
 public class RepeatedlyRequestWrapper extends HttpServletRequestWrapper
 {

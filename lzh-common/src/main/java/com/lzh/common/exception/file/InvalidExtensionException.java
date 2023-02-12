@@ -4,9 +4,7 @@ import java.util.Arrays;
 import org.apache.commons.fileupload.FileUploadException;
 
 /**
- * 文件上传 误异常类
- * 
- * @author ruoyi
+ * @Description: 文件上传 误异常类
  */
 public class InvalidExtensionException extends FileUploadException
 {

@@ -1,9 +1,7 @@
 package com.lzh.common.exception;
 
 /**
- * 业务异常
- * 
- * @author ruoyi
+ * @Description: 业务异常
  */
 public final class ServiceException extends RuntimeException
 {

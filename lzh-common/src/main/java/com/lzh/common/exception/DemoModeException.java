@@ -1,9 +1,7 @@
 package com.lzh.common.exception;
 
 /**
- * 演示模式异常
- * 
- * @author ruoyi
+ * @Description: 演示模式异常
  */
 public class DemoModeException extends RuntimeException
 {

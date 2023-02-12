@@ -6,9 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PreDestroy;
 
 /**
- * 确保应用退出时能关闭后台线程
- *
- * @author ruoyi
+ * @Description: 确保应用退出时能关闭后台线程
  */
 @Component
 public class ShutdownManager

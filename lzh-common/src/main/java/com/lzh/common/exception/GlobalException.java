@@ -1,9 +1,7 @@
 package com.lzh.common.exception;
 
 /**
- * 全局异常
- * 
- * @author ruoyi
+ * @Description: 全局异常
  */
 public class GlobalException extends RuntimeException
 {

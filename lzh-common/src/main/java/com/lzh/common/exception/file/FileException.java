@@ -3,9 +3,7 @@ package com.lzh.common.exception.file;
 import com.lzh.common.exception.base.BaseException;
 
 /**
- * 文件信息异常类
- * 
- * @author ruoyi
+ * @Description: 文件信息异常类
  */
 public class FileException extends BaseException
 {

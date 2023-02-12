@@ -3,9 +3,7 @@ package com.lzh.system.domain;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 缓存信息
- * 
- * @author ruoyi
+ * @Description: 缓存信息
  */
 public class SysCache
 {

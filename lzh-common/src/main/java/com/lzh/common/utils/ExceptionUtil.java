@@ -5,9 +5,7 @@ import java.io.StringWriter;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**
- * 错误信息处理类。
- *
- * @author ruoyi
+ * @Description: 错误信息处理类。
  */
 public class ExceptionUtil
 {

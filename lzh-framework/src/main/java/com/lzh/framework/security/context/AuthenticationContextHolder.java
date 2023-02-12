@@ -3,9 +3,7 @@ package com.lzh.framework.security.context;
 import org.springframework.security.core.Authentication;
 
 /**
- * 身份验证信息
- * 
- * @author ruoyi
+ * @Description: 身份验证信息
  */
 public class AuthenticationContextHolder
 {

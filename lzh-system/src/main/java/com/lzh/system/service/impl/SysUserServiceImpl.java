@@ -19,21 +19,16 @@ import com.lzh.common.utils.SecurityUtils;
 import com.lzh.common.utils.StringUtils;
 import com.lzh.common.utils.bean.BeanValidators;
 import com.lzh.common.utils.spring.SpringUtils;
-import com.lzh.system.domain.SysPost;
 import com.lzh.system.domain.SysUserPost;
 import com.lzh.system.domain.SysUserRole;
-import com.lzh.system.mapper.SysPostMapper;
 import com.lzh.system.mapper.SysRoleMapper;
 import com.lzh.system.mapper.SysUserMapper;
 import com.lzh.system.mapper.SysUserPostMapper;
 import com.lzh.system.mapper.SysUserRoleMapper;
-import com.lzh.system.service.ISysConfigService;
 import com.lzh.system.service.ISysUserService;
 
 /**
- * 用户 业务层处理
- * 
- * @author ruoyi
+ * @Description: 用户 业务层处理
  */
 @Service
 public class SysUserServiceImpl implements ISysUserService
@@ -47,16 +42,10 @@ public class SysUserServiceImpl implements ISysUserService
     private SysRoleMapper roleMapper;
 
     @Autowired
-    private SysPostMapper postMapper;
-
-    @Autowired
     private SysUserRoleMapper userRoleMapper;
 
     @Autowired
     private SysUserPostMapper userPostMapper;
-
-    @Autowired
-    private ISysConfigService configService;
 
     @Autowired
     protected Validator validator;
@@ -139,23 +128,6 @@ public class SysUserServiceImpl implements ISysUserService
             return StringUtils.EMPTY;
         }
         return list.stream().map(SysRole::getRoleName).collect(Collectors.joining(","));
-    }
-
-    /**
-     * 查询用户所属岗位组
-     * 
-     * @param userName 用户名
-     * @return 结果
-     */
-    @Override
-    public String selectUserPostGroup(String userName)
-    {
-        List<SysPost> list = postMapper.selectPostsByUserName(userName);
-        if (CollectionUtils.isEmpty(list))
-        {
-            return StringUtils.EMPTY;
-        }
-        return list.stream().map(SysPost::getPostName).collect(Collectors.joining(","));
     }
 
     /**
@@ -489,7 +461,6 @@ public class SysUserServiceImpl implements ISysUserService
         int failureNum = 0;
         StringBuilder successMsg = new StringBuilder();
         StringBuilder failureMsg = new StringBuilder();
-        String password = configService.selectConfigByKey("sys.user.initPassword");
         for (SysUser user : userList)
         {
             try
@@ -499,7 +470,6 @@ public class SysUserServiceImpl implements ISysUserService
                 if (StringUtils.isNull(u))
                 {
                     BeanValidators.validateWithException(validator, user);
-                    user.setPassword(SecurityUtils.encryptPassword(password));
                     user.setCreateBy(operName);
                     this.insertUser(user);
                     successNum++;

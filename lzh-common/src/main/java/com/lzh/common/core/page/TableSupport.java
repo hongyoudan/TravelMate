@@ -4,9 +4,7 @@ import com.lzh.common.core.text.Convert;
 import com.lzh.common.utils.ServletUtils;
 
 /**
- * 表格数据处理
- * 
- * @author ruoyi
+ * @Description: 表格数据处理
  */
 public class TableSupport
 {

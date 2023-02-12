@@ -5,7 +5,7 @@ import com.lzh.common.utils.DateUtils;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * @author ruoyi 序列生成类
+ * @Description: 序列生成类
  */
 public class Seq
 {

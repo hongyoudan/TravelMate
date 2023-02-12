@@ -5,9 +5,7 @@ import com.lzh.common.utils.Arith;
 import com.lzh.common.utils.DateUtils;
 
 /**
- * JVM相关信息
- * 
- * @author ruoyi
+ * @Description: JVM相关信息
  */
 public class Jvm
 {

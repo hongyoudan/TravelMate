@@ -3,9 +3,7 @@ package com.lzh.common.filter;
 import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 
 /**
- * 排除JSON敏感属性
- * 
- * @author ruoyi
+ * @Description: 排除JSON敏感属性
  */
 public class PropertyPreExcludeFilter extends SimplePropertyPreFilter
 {

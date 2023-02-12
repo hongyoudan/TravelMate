@@ -1,9 +1,7 @@
 package com.lzh.common.constant;
 
 /**
- * 缓存的key 常量
- * 
- * @author ruoyi
+ * @Description: 缓存的key 常量
  */
 public class CacheConstants
 {

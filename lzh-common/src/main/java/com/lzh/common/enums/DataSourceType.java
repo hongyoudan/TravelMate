@@ -1,9 +1,7 @@
 package com.lzh.common.enums;
 
 /**
- * 数据源
- * 
- * @author ruoyi
+ * @Description: 数据源
  */
 public enum DataSourceType
 {

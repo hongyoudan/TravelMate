@@ -7,9 +7,7 @@ import com.lzh.system.domain.SysUserOnline;
 import com.lzh.system.service.ISysUserOnlineService;
 
 /**
- * 在线用户 服务层处理
- * 
- * @author ruoyi
+ * @Description: 在线用户 服务层处理
  */
 @Service
 public class SysUserOnlineServiceImpl implements ISysUserOnlineService
@@ -87,10 +85,6 @@ public class SysUserOnlineServiceImpl implements ISysUserOnlineService
         sysUserOnline.setBrowser(user.getBrowser());
         sysUserOnline.setOs(user.getOs());
         sysUserOnline.setLoginTime(user.getLoginTime());
-        if (StringUtils.isNotNull(user.getUser().getDept()))
-        {
-            sysUserOnline.setDeptName(user.getUser().getDept().getDeptName());
-        }
         return sysUserOnline;
     }
 }

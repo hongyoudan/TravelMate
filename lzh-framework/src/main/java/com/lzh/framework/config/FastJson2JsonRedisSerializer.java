@@ -8,9 +8,7 @@ import com.alibaba.fastjson2.JSONReader;
 import com.alibaba.fastjson2.JSONWriter;
 
 /**
- * Redis使用FastJson序列化
- * 
- * @author ruoyi
+ * @Description: Redis使用FastJson序列化
  */
 public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T>
 {

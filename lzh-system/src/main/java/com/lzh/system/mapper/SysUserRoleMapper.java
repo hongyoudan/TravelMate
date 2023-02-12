@@ -5,9 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import com.lzh.system.domain.SysUserRole;
 
 /**
- * 用户与角色关联表 数据层
- * 
- * @author ruoyi
+ * @Description: 用户与角色关联表 数据层
  */
 public interface SysUserRoleMapper
 {

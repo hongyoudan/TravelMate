@@ -7,9 +7,7 @@ import com.lzh.common.core.domain.entity.SysMenu;
 import com.lzh.system.domain.vo.RouterVo;
 
 /**
- * 菜单 业务层
- * 
- * @author ruoyi
+ * @Description: 菜单 业务层
  */
 public interface ISysMenuService
 {

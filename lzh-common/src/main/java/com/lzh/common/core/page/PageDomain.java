@@ -3,9 +3,7 @@ package com.lzh.common.core.page;
 import com.lzh.common.utils.StringUtils;
 
 /**
- * 分页数据
- * 
- * @author ruoyi
+ * @Description: 分页数据
  */
 public class PageDomain
 {

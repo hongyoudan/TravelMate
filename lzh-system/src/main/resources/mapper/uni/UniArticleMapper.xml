@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzh.uni.mapper.UniArticleMapper">
+    
+    <resultMap type="UniArticle" id="UniArticleResult">
+        <result property="id"    column="id"    />
+        <result property="title"    column="title"    />
+        <result property="imgUrl"    column="img_url"    />
+        <result property="introduction"    column="introduction"    />
+        <result property="content"    column="content"    />
+        <result property="type"    column="type"    />
+        <result property="isDisplay"    column="is_display"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectUniArticleVo">
+        select id, title, img_url, introduction, content, type, is_display, create_time, update_time from uni_article
+    </sql>
+
+    <select id="selectUniArticleList" parameterType="UniArticle" resultMap="UniArticleResult">
+        <include refid="selectUniArticleVo"/>
+        <where>  
+            <if test="title != null  and title != ''"> and title = #{title}</if>
+            <if test="imgUrl != null  and imgUrl != ''"> and img_url = #{imgUrl}</if>
+            <if test="introduction != null  and introduction != ''"> and introduction = #{introduction}</if>
+            <if test="content != null  and content != ''"> and content = #{content}</if>
+            <if test="type != null  and type != ''"> and type = #{type}</if>
+            <if test="isDisplay != null  and isDisplay != ''"> and is_display = #{isDisplay}</if>
+        </where>
+        order by create_time desc
+    </select>
+    
+    <select id="selectUniArticleById" parameterType="Integer" resultMap="UniArticleResult">
+        <include refid="selectUniArticleVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertUniArticle" parameterType="UniArticle" useGeneratedKeys="true" keyProperty="id">
+        insert into uni_article
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">title,</if>
+            <if test="imgUrl != null and imgUrl != ''">img_url,</if>
+            <if test="introduction != null and introduction != ''">introduction,</if>
+            <if test="content != null and content != ''">content,</if>
+            <if test="type != null and type != ''">type,</if>
+            <if test="isDisplay != null and isDisplay != ''">is_display,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">#{title},</if>
+            <if test="imgUrl != null and imgUrl != ''">#{imgUrl},</if>
+            <if test="introduction != null and introduction != ''">#{introduction},</if>
+            <if test="content != null and content != ''">#{content},</if>
+            <if test="type != null and type != ''">#{type},</if>
+            <if test="isDisplay != null and isDisplay != ''">#{isDisplay},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateUniArticle" parameterType="UniArticle">
+        update uni_article
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null and title != ''">title = #{title},</if>
+            <if test="imgUrl != null and imgUrl != ''">img_url = #{imgUrl},</if>
+            <if test="introduction != null and introduction != ''">introduction = #{introduction},</if>
+            <if test="content != null and content != ''">content = #{content},</if>
+            <if test="type != null and type != ''">type = #{type},</if>
+            <if test="isDisplay != null and isDisplay != ''">is_display = #{isDisplay},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteUniArticleById" parameterType="Integer">
+        delete from uni_article where id = #{id}
+    </delete>
+
+    <delete id="deleteUniArticleByIds" parameterType="String">
+        delete from uni_article where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

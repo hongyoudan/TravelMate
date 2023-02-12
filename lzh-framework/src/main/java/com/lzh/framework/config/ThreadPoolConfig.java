@@ -10,10 +10,8 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * 线程池配置
- *
- * @author ruoyi
- **/
+ * @Description: 线程池配置
+ */
 @Configuration
 public class ThreadPoolConfig
 {

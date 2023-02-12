@@ -26,9 +26,7 @@ import com.lzh.system.mapper.SysRoleMenuMapper;
 import com.lzh.system.service.ISysMenuService;
 
 /**
- * 菜单 业务层处理
- * 
- * @author ruoyi
+ * @Description: 菜单 业务层处理
  */
 @Service
 public class SysMenuServiceImpl implements ISysMenuService

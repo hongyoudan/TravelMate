@@ -12,9 +12,7 @@ import com.lzh.common.core.domain.AjaxResult;
 import com.lzh.common.utils.ServletUtils;
 
 /**
- * 防止重复提交拦截器
- *
- * @author ruoyi
+ * @Description: 防止重复提交拦截器
  */
 @Component
 public abstract class RepeatSubmitInterceptor implements HandlerInterceptor

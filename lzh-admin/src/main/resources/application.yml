@@ -9,7 +9,7 @@ lzh:
   # 实例演示开关
   demoEnabled: true
   # 文件路径 示例（ Windows配置D:/ruoyi/uploadPath，Linux配置 /home/ruoyi/uploadPath）
-  profile: /Users/hayden/Desktop/ProjectDevelopment/2023-02-06/TravelMate
+  profile: /Users/hayden/Desktop/ProjectDevelopment/2023-02-06/TravelMate/uploadPath
   # 获取ip地址开关
   addressEnabled: false
   # 验证码类型 math 数组计算 char 字符验证
@@ -18,7 +18,7 @@ lzh:
 # 开发环境配置
 server:
   # 服务器的HTTP端口，默认为8080
-  port: 8080
+  port: 2301
   servlet:
     # 应用的访问路径
     context-path: /
@@ -114,18 +114,3 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql 
 
-# Swagger配置
-swagger:
-  # 是否开启swagger
-  enabled: true
-  # 请求前缀
-  pathMapping: /dev-api
-
-# 防止XSS攻击
-xss: 
-  # 过滤开关
-  enabled: true
-  # 排除链接（多个用逗号分隔）
-  excludes: /system/notice
-  # 匹配链接
-  urlPatterns: /system/*,/monitor/*,/tool/*

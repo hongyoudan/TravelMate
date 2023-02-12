@@ -17,7 +17,6 @@ import com.lzh.common.annotation.Log;
 import com.lzh.common.constant.UserConstants;
 import com.lzh.common.core.controller.BaseController;
 import com.lzh.common.core.domain.AjaxResult;
-import com.lzh.common.core.domain.entity.SysDept;
 import com.lzh.common.core.domain.entity.SysRole;
 import com.lzh.common.core.domain.entity.SysUser;
 import com.lzh.common.core.domain.model.LoginUser;
@@ -28,14 +27,12 @@ import com.lzh.common.utils.poi.ExcelUtil;
 import com.lzh.framework.web.service.SysPermissionService;
 import com.lzh.framework.web.service.TokenService;
 import com.lzh.system.domain.SysUserRole;
-import com.lzh.system.service.ISysDeptService;
 import com.lzh.system.service.ISysRoleService;
 import com.lzh.system.service.ISysUserService;
 
 /**
- * 角色信息
- * 
- * @author ruoyi
+ * @Date: 2023-02-09
+ * @Description: 角色信息
  */
 @RestController
 @RequestMapping("/system/role")
@@ -52,9 +49,6 @@ public class SysRoleController extends BaseController
 
     @Autowired
     private ISysUserService userService;
-
-    @Autowired
-    private ISysDeptService deptService;
 
     @PreAuthorize("@ss.hasPermi('system:role:list')")
     @GetMapping("/list")
@@ -246,18 +240,5 @@ public class SysRoleController extends BaseController
     {
         roleService.checkRoleDataScope(roleId);
         return toAjax(roleService.insertAuthUsers(roleId, userIds));
-    }
-
-    /**
-     * 获取对应角色部门树列表
-     */
-    @PreAuthorize("@ss.hasPermi('system:role:query')")
-    @GetMapping(value = "/deptTree/{roleId}")
-    public AjaxResult deptTree(@PathVariable("roleId") Long roleId)
-    {
-        AjaxResult ajax = AjaxResult.success();
-        ajax.put("checkedKeys", deptService.selectDeptListByRoleId(roleId));
-        ajax.put("depts", deptService.selectDeptTreeList(new SysDept()));
-        return ajax;
     }
 }

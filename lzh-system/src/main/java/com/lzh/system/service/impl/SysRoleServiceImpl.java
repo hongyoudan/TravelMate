@@ -26,9 +26,7 @@ import com.lzh.system.mapper.SysUserRoleMapper;
 import com.lzh.system.service.ISysRoleService;
 
 /**
- * 角色 业务层处理
- * 
- * @author ruoyi
+ * @Description: 角色 业务层处理
  */
 @Service
 public class SysRoleServiceImpl implements ISysRoleService

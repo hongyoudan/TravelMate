@@ -6,9 +6,7 @@ import com.lzh.common.core.page.TableSupport;
 import com.lzh.common.utils.sql.SqlUtil;
 
 /**
- * 分页工具类
- * 
- * @author ruoyi
+ * @Description: 分页工具类
  */
 public class PageUtils extends PageHelper
 {

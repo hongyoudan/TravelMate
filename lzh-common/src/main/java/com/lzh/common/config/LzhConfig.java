@@ -4,9 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * 读取项目相关配置
- * 
- * @author ruoyi
+ * @Description: 读取项目相关配置
  */
 @Component
 @ConfigurationProperties(prefix = "lzh")
@@ -29,9 +27,6 @@ public class LzhConfig
 
     /** 获取地址开关 */
     private static boolean addressEnabled;
-
-    /** 验证码类型 */
-    private static String captchaType;
 
     public String getName()
     {
@@ -91,14 +86,6 @@ public class LzhConfig
     public void setAddressEnabled(boolean addressEnabled)
     {
         LzhConfig.addressEnabled = addressEnabled;
-    }
-
-    public static String getCaptchaType() {
-        return captchaType;
-    }
-
-    public void setCaptchaType(String captchaType) {
-        LzhConfig.captchaType = captchaType;
     }
 
     /**

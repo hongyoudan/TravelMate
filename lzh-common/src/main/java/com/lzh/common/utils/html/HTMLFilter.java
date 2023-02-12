@@ -11,9 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * HTML过滤器，用于去除XSS漏洞隐患。
- *
- * @author ruoyi
+ * @Description: HTML过滤器，用于去除XSS漏洞隐患。
  */
 public final class HTMLFilter
 {

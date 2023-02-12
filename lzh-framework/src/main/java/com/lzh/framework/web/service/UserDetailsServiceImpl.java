@@ -15,9 +15,7 @@ import com.lzh.common.utils.StringUtils;
 import com.lzh.system.service.ISysUserService;
 
 /**
- * 用户验证处理
- *
- * @author ruoyi
+ * @Description: 用户验证处理
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService
