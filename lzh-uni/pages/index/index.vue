@@ -2,7 +2,7 @@
 	<view class="index">
 		<!-- 轮播图 -->
 		<view class="banner">
-			<u-swiper height="200" :list="bannerLists" keyName="imgUrl" showTitle :autoplay="true" circular></u-swiper>
+			<u-swiper height="180" :list="bannerLists" keyName="imgUrl" showTitle :autoplay="true" circular></u-swiper>
 		</view>
 		<!-- 要闻 -->
 		<view class="news">
@@ -38,9 +38,15 @@
 			}
 		},
 		onLoad() {
+			/**
+			 * 页面加载时获取数据
+			 */
 			this.getData()
 		},
 		methods: {
+			/**
+			 * 获取数据
+			 */
 			getData() {
 				getIndexLists().then(res => {
 					if (res.code === 200) {
@@ -48,15 +54,33 @@
 						this.newsList = res.data.newsList[0]
 						this.hotScenicSpotLists = res.data.hotScenicSpotLists
 					}
-					console.log(res);
+					console.log('首页数据', res);
 				})
 			},
+			/**
+			 * 点击图片跳转到景点详情页
+			 */
 			clickImg(id) {
 				uni.navigateTo({
 					url: '/pages/scenic_spot_detail/scenic_spot_detail?id=' + id
 				})
 			}
-		}
+		},
+		/**
+		 * 下拉刷新
+		 */
+		onPullDownRefresh() {
+			// 获取数据
+			setTimeout(() => {
+				getIndexLists().then(res => {
+					uni.showToast({
+						title: '加载成功！',
+					});
+					uni.stopPullDownRefresh()
+					console.log('下拉刷新', res);
+				})
+			}, 1000)
+		},
 	}
 </script>
 
