@@ -26,7 +26,7 @@
         </where>
     </select>
 
-    <select id="selectUniBannerById" parameterType="Long" resultMap="UniBannerResult">
+    <select id="selectUniBannerById" parameterType="Integer" resultMap="UniBannerResult">
         <include refid="selectUniBannerVo"/>
         where id = #{id}
     </select>
@@ -61,7 +61,7 @@
         where id = #{id}
     </update>
 
-    <delete id="deleteUniBannerById" parameterType="Long">
+    <delete id="deleteUniBannerById" parameterType="Integer">
         delete from uni_banner where id = #{id}
     </delete>
 

@@ -3,32 +3,32 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "旅伴"
+				"navigationBarTitleText": "旅伴",
+				"enablePullDownRefresh": true
 			}
 		},
 		{
 			"path": "pages/article/article",
 			"style": {
-				"navigationBarTitleText": "文章"
+				"navigationBarTitleText": "文章",
+				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/scenic_spot_detail/scenic_spot_detail",
 			"style": {
 				"navigationBarTitleText": "景点详情",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": true
+			}
+
+		}, {
+			"path": "pages/article_detail/article_detail",
+			"style": {
+				"navigationBarTitleText": "文章详情",
+				"enablePullDownRefresh": true
 			}
 
 		}
-	    ,{
-            "path" : "pages/article_detail/article_detail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "文章详情",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "旅伴",
@@ -37,7 +37,7 @@
 	},
 	"tabBar": {
 		"color": "#000000",
-		"selectedColor": "#1296db",
+		"selectedColor": "#F07D7D",
 		"list": [{
 				"pagePath": "pages/index/index",
 				"iconPath": "static/images/home@not_selected.png",

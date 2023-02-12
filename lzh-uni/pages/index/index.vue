@@ -133,7 +133,7 @@
 
 				.item {
 					width: 45%;
-					height: 160px;
+					height: 130px;
 					display: flex;
 					box-sizing: border-box;
 					flex-direction: column;

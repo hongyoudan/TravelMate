@@ -15,13 +15,18 @@
 	export default {
 		data() {
 			return {
-				articleList: {}
+				articleList: {},
+				id: ''
 			};
 		},
 		onLoad(option) {
+			this.id = option.id
 			this.getData(option.id)
 		},
 		methods: {
+			/**
+			 * 获取数据
+			 */
 			getData(id) {
 				getArticleListsById(id).then(res => {
 					if (res.code === 200) {
@@ -30,13 +35,28 @@
 					console.log(res);
 				})
 			}
-		}
+		},
+		/**
+		 * 下拉刷新
+		 */
+		onPullDownRefresh() {
+			// 获取数据
+			setTimeout(() => {
+				getArticleListsById(this.id).then(res => {
+					uni.showToast({
+						title: '加载成功！',
+					});
+					uni.stopPullDownRefresh()
+					console.log('下拉刷新', res);
+				})
+			}, 1000)
+		},
 	}
 </script>
 
 <style lang="scss">
 	.article_detail {
-		padding: 10px 10px 0 10px;
+		padding: 10px 10px 15px 10px;
 
 		.title {
 			font-size: 25px;
