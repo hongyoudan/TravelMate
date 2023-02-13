@@ -19,9 +19,6 @@ public class LzhConfig
     /** 版权年份 */
     private String copyrightYear;
 
-    /** 实例演示开关 */
-    private boolean demoEnabled;
-
     /** 上传路径 */
     private static String profile;
 
@@ -56,16 +53,6 @@ public class LzhConfig
     public void setCopyrightYear(String copyrightYear)
     {
         this.copyrightYear = copyrightYear;
-    }
-
-    public boolean isDemoEnabled()
-    {
-        return demoEnabled;
-    }
-
-    public void setDemoEnabled(boolean demoEnabled)
-    {
-        this.demoEnabled = demoEnabled;
     }
 
     public static String getProfile()
