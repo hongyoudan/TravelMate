@@ -6,7 +6,10 @@ import 'nprogress/nprogress.css'
 import { getToken } from '@/utils/auth'
 import { isRelogin } from '@/utils/request'
 
-NProgress.configure({ showSpinner: false })
+NProgress.configure({ showSpinner: true })
+NProgress.configure({
+  template: '<div class="bar" style="background-color: #F07D7D" role="bar"><div class="peg" style="box-shadow:0 0 10px #F07D7D, 0 0 5px #F07D7D;-webkit-box-shadow:0 0 10px #F07D7D, 0 0 5px #F07D7D"></div></div><div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
+})
 
 const whiteList = ['/login', '/register']
 
@@ -18,6 +21,7 @@ router.beforeEach((to, from, next) => {
     if (to.path === '/login') {
       next({ path: '/' })
       NProgress.done()
+
     } else {
       if (store.getters.roles.length === 0) {
         isRelogin.show = true
