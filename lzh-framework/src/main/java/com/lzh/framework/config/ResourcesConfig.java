@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import com.lzh.common.config.LzhConfig;
 import com.lzh.common.constant.Constants;
-import com.lzh.framework.interceptor.RepeatSubmitInterceptor;
 
 /**
  * @Description: 通用配置
@@ -21,8 +20,6 @@ import com.lzh.framework.interceptor.RepeatSubmitInterceptor;
 @Configuration
 public class ResourcesConfig implements WebMvcConfigurer
 {
-    @Autowired
-    private RepeatSubmitInterceptor repeatSubmitInterceptor;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry)
@@ -30,15 +27,6 @@ public class ResourcesConfig implements WebMvcConfigurer
         /** 本地文件上传路径 */
         registry.addResourceHandler(Constants.RESOURCE_PREFIX + "/**")
                 .addResourceLocations("file:" + LzhConfig.getProfile() + "/");
-    }
-
-    /**
-     * 自定义拦截规则
-     */
-    @Override
-    public void addInterceptors(InterceptorRegistry registry)
-    {
-        registry.addInterceptor(repeatSubmitInterceptor).addPathPatterns("/**");
     }
 
     /**
