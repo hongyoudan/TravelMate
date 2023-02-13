@@ -35,7 +35,17 @@
             <groupId>com.lzh</groupId>
             <artifactId>lzh-framework</artifactId>
         </dependency>
+        <!--  数据库设计文档生成工具-->
+        <dependency>
+            <groupId>cn.smallbun.screw</groupId>
+            <artifactId>screw-core</artifactId>
+            <version>1.0.5</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
