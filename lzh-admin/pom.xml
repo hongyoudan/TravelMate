@@ -33,7 +33,7 @@
         <!-- 核心模块-->
         <dependency>
             <groupId>com.lzh</groupId>
-            <artifactId>lzh-framework</artifactId>
+            <artifactId>lzh-common</artifactId>
         </dependency>
 
         <!--  数据库设计文档生成工具-->

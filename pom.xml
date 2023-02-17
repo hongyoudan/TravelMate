@@ -118,20 +118,6 @@
                 <version>${jwt.version}</version>
             </dependency>
 
-            <!-- 核心模块-->
-            <dependency>
-                <groupId>com.lzh</groupId>
-                <artifactId>lzh-framework</artifactId>
-                <version>${lzh.version}</version>
-            </dependency>
-
-            <!-- 系统模块-->
-            <dependency>
-                <groupId>com.lzh</groupId>
-                <artifactId>lzh-system</artifactId>
-                <version>${lzh.version}</version>
-            </dependency>
-
             <!-- 通用工具-->
             <dependency>
                 <groupId>com.lzh</groupId>
@@ -144,8 +130,6 @@
 
     <modules>
         <module>lzh-admin</module>
-        <module>lzh-framework</module>
-        <module>lzh-system</module>
         <module>lzh-common</module>
     </modules>
     <packaging>pom</packaging>
