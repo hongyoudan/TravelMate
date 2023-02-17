@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import com.lzh.common.constant.CacheConstants;
 import com.lzh.common.constant.Constants;
 import com.lzh.common.core.domain.entity.SysUser;
-import com.lzh.common.core.redis.RedisCache;
 import com.lzh.common.exception.user.UserPasswordNotMatchException;
 import com.lzh.common.exception.user.UserPasswordRetryLimitExceedException;
 import com.lzh.common.utils.MessageUtils;
@@ -22,8 +21,6 @@ import com.lzh.framework.security.context.AuthenticationContextHolder;
 @Component
 public class SysPasswordService
 {
-    @Autowired
-    private RedisCache redisCache;
 
     @Value(value = "${user.password.maxRetryCount}")
     private int maxRetryCount;
@@ -48,29 +45,29 @@ public class SysPasswordService
         String username = usernamePasswordAuthenticationToken.getName();
         String password = usernamePasswordAuthenticationToken.getCredentials().toString();
 
-        Integer retryCount = redisCache.getCacheObject(getCacheKey(username));
-
-        if (retryCount == null)
-        {
-            retryCount = 0;
-        }
-
-        if (retryCount >= Integer.valueOf(maxRetryCount).intValue())
-        {
-            throw new UserPasswordRetryLimitExceedException(maxRetryCount, lockTime);
-        }
+//        Integer retryCount = redisCache.getCacheObject(getCacheKey(username));
+//
+//        if (retryCount == null)
+//        {
+//            retryCount = 0;
+//        }
+//
+//        if (retryCount >= Integer.valueOf(maxRetryCount).intValue())
+//        {
+//            throw new UserPasswordRetryLimitExceedException(maxRetryCount, lockTime);
+//        }
 
         if (!matches(user, password))
         {
-            retryCount = retryCount + 1;
+//            retryCount = retryCount + 1;
 
-            redisCache.setCacheObject(getCacheKey(username), retryCount, lockTime, TimeUnit.MINUTES);
+//            redisCache.setCacheObject(getCacheKey(username), retryCount, lockTime, TimeUnit.MINUTES);
             throw new UserPasswordNotMatchException();
         }
-        else
-        {
-            clearLoginRecordCache(username);
-        }
+//        else
+//        {
+//            clearLoginRecordCache(username);
+//        }
     }
 
     public boolean matches(SysUser user, String rawPassword)
@@ -78,11 +75,11 @@ public class SysPasswordService
         return SecurityUtils.matchesPassword(rawPassword, user.getPassword());
     }
 
-    public void clearLoginRecordCache(String loginName)
-    {
-        if (redisCache.hasKey(getCacheKey(loginName)))
-        {
-            redisCache.deleteObject(getCacheKey(loginName));
-        }
-    }
+//    public void clearLoginRecordCache(String loginName)
+//    {
+//        if (redisCache.hasKey(getCacheKey(loginName)))
+//        {
+//            redisCache.deleteObject(getCacheKey(loginName));
+//        }
+//    }
 }

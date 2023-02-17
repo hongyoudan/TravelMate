@@ -6,12 +6,12 @@ package com.lzh.common.constant;
 public class CacheConstants
 {
     /**
-     * 登录用户 redis key
+     * 登录用户key
      */
     public static final String LOGIN_TOKEN_KEY = "login_tokens:";
 
     /**
-     * 登录账户密码错误次数 redis key
+     * 登录账户密码错误次数key
      */
     public static final String PWD_ERR_CNT_KEY = "pwd_err_cnt:";
 }

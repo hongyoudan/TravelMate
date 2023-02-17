@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzh.system.mapper.SysUserCacheMapper">
+    
+    <resultMap type="SysUserCache" id="SysUserCacheResult">
+        <result property="cacheId"    column="cache_id"    />
+        <result property="userKey"    column="user_key"    />
+        <result property="loginUser"    column="login_user"    />
+    </resultMap>
+
+    <sql id="selectSysUserCacheVo">
+        select cache_id, user_key, login_user from sys_user_cache
+    </sql>
+
+    <select id="selectSysUserCacheList" parameterType="SysUserCache" resultMap="SysUserCacheResult">
+        <include refid="selectSysUserCacheVo"/>
+        <where>  
+            <if test="userKey != null  and userKey != ''"> and user_key = #{userKey}</if>
+            <if test="loginUser != null  and loginUser != ''"> and login_user = #{loginUser}</if>
+        </where>
+    </select>
+    
+    <select id="selectSysUserCacheByCacheId" parameterType="Integer" resultMap="SysUserCacheResult">
+        <include refid="selectSysUserCacheVo"/>
+        where cache_id = #{cacheId}
+    </select>
+        
+    <insert id="insertSysUserCache" parameterType="SysUserCache" useGeneratedKeys="true" keyProperty="cacheId">
+        insert into sys_user_cache
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userKey != null and userKey != ''">user_key,</if>
+            <if test="loginUser != null and loginUser != ''">login_user,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userKey != null and userKey != ''">#{userKey},</if>
+            <if test="loginUser != null and loginUser != ''">#{loginUser},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysUserCache" parameterType="SysUserCache">
+        update sys_user_cache
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userKey != null and userKey != ''">user_key = #{userKey},</if>
+            <if test="loginUser != null and loginUser != ''">login_user = #{loginUser},</if>
+        </trim>
+        where cache_id = #{cacheId}
+    </update>
+
+    <delete id="deleteSysUserCacheByCacheId" parameterType="Integer">
+        delete from sys_user_cache where cache_id = #{cacheId}
+    </delete>
+
+    <delete id="deleteSysUserCacheByCacheIds" parameterType="String">
+        delete from sys_user_cache where cache_id in 
+        <foreach item="cacheId" collection="array" open="(" separator="," close=")">
+            #{cacheId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteSysUserCacheByKey" parameterType="String">
+        delete from sys_user_cache where user_key = #{userKey}
+    </delete>
+</mapper>

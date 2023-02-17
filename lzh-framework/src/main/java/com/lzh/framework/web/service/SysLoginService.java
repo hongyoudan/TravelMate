@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 import com.lzh.common.constant.CacheConstants;
 import com.lzh.common.core.domain.entity.SysUser;
 import com.lzh.common.core.domain.model.LoginUser;
-import com.lzh.common.core.redis.RedisCache;
 import com.lzh.common.exception.ServiceException;
 import com.lzh.common.exception.user.UserPasswordNotMatchException;
 import com.lzh.common.utils.DateUtils;
@@ -32,9 +31,6 @@ public class SysLoginService
     @Resource
     private AuthenticationManager authenticationManager;
 
-    @Autowired
-    private RedisCache redisCache;
-    
     @Autowired
     private ISysUserService userService;
 

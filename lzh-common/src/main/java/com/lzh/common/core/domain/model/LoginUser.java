@@ -30,11 +30,6 @@ public class LoginUser implements UserDetails
     private Long loginTime;
 
     /**
-     * 过期时间
-     */
-    private Long expireTime;
-
-    /**
      * 登录IP地址
      */
     private String ipaddr;
@@ -210,16 +205,6 @@ public class LoginUser implements UserDetails
         this.os = os;
     }
 
-    public Long getExpireTime()
-    {
-        return expireTime;
-    }
-
-    public void setExpireTime(Long expireTime)
-    {
-        this.expireTime = expireTime;
-    }
-
     public Set<String> getPermissions()
     {
         return permissions;
@@ -244,5 +229,20 @@ public class LoginUser implements UserDetails
     public Collection<? extends GrantedAuthority> getAuthorities()
     {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "userId=" + userId +
+                ", token='" + token + '\'' +
+                ", loginTime=" + loginTime +
+                ", ipaddr='" + ipaddr + '\'' +
+                ", loginLocation='" + loginLocation + '\'' +
+                ", browser='" + browser + '\'' +
+                ", os='" + os + '\'' +
+                ", permissions=" + permissions +
+                ", user=" + user +
+                '}';
     }
 }

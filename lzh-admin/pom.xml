@@ -35,6 +35,7 @@
             <groupId>com.lzh</groupId>
             <artifactId>lzh-framework</artifactId>
         </dependency>
+
         <!--  数据库设计文档生成工具-->
         <dependency>
             <groupId>cn.smallbun.screw</groupId>
