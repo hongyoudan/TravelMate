@@ -11,7 +11,7 @@
  Target Server Version : 50736
  File Encoding         : 65001
 
- Date: 13/02/2023 19:26:05
+ Date: 18/02/2023 03:11:35
 */
 
 SET NAMES utf8mb4;
@@ -30,7 +30,6 @@ CREATE TABLE `sys_menu` (
   `component` varchar(255) DEFAULT NULL COMMENT '组件路径',
   `query` varchar(255) DEFAULT NULL COMMENT '路由参数',
   `is_frame` int(1) DEFAULT '1' COMMENT '是否为外链（0是 1否）',
-  `is_cache` int(1) DEFAULT '0' COMMENT '是否缓存（0缓存 1不缓存）',
   `menu_type` char(1) DEFAULT '' COMMENT '菜单类型（M目录 C菜单 F按钮）',
   `visible` char(1) DEFAULT '0' COMMENT '菜单状态（0显示 1隐藏）',
   `status` char(1) DEFAULT '0' COMMENT '菜单状态（0正常 1停用）',
@@ -48,51 +47,51 @@ CREATE TABLE `sys_menu` (
 -- Records of sys_menu
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_menu` VALUES (1, '系统管理', 0, 1, 'system', NULL, '', 1, 1, 'M', '0', '0', '', 'system', 'admin', '2023-02-08 12:07:07', '', NULL, '系统管理目录');
-INSERT INTO `sys_menu` VALUES (100, '用户管理', 1, 1, 'user', 'system/user/index', '', 1, 1, 'C', '0', '0', 'system:user:list', 'user', 'admin', '2023-02-08 12:07:07', 'admin', '2023-02-10 08:39:40', '用户管理菜单');
-INSERT INTO `sys_menu` VALUES (101, '角色管理', 1, 2, 'role', 'system/role/index', '', 1, 1, 'C', '0', '0', 'system:role:list', 'peoples', 'admin', '2023-02-08 12:07:07', '', NULL, '角色管理菜单');
-INSERT INTO `sys_menu` VALUES (102, '菜单管理', 1, 3, 'menu', 'system/menu/index', '', 1, 1, 'C', '0', '0', 'system:menu:list', 'tree-table', 'admin', '2023-02-08 12:07:07', '', NULL, '菜单管理菜单');
-INSERT INTO `sys_menu` VALUES (1000, '用户查询', 100, 1, '', '', '', 1, 1, 'F', '0', '0', 'system:user:query', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1001, '用户新增', 100, 2, '', '', '', 1, 1, 'F', '0', '0', 'system:user:add', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1002, '用户修改', 100, 3, '', '', '', 1, 1, 'F', '0', '0', 'system:user:edit', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1003, '用户删除', 100, 4, '', '', '', 1, 1, 'F', '0', '0', 'system:user:remove', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1004, '用户导出', 100, 5, '', '', '', 1, 1, 'F', '0', '0', 'system:user:export', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1005, '用户导入', 100, 6, '', '', '', 1, 1, 'F', '0', '0', 'system:user:import', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1006, '重置密码', 100, 7, '', '', '', 1, 1, 'F', '0', '0', 'system:user:resetPwd', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1007, '角色查询', 101, 1, '', '', '', 1, 1, 'F', '0', '0', 'system:role:query', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1008, '角色新增', 101, 2, '', '', '', 1, 1, 'F', '0', '0', 'system:role:add', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1009, '角色修改', 101, 3, '', '', '', 1, 1, 'F', '0', '0', 'system:role:edit', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1010, '角色删除', 101, 4, '', '', '', 1, 1, 'F', '0', '0', 'system:role:remove', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1011, '角色导出', 101, 5, '', '', '', 1, 1, 'F', '0', '0', 'system:role:export', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1012, '菜单查询', 102, 1, '', '', '', 1, 1, 'F', '0', '0', 'system:menu:query', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1013, '菜单新增', 102, 2, '', '', '', 1, 1, 'F', '0', '0', 'system:menu:add', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1014, '菜单修改', 102, 3, '', '', '', 1, 1, 'F', '0', '0', 'system:menu:edit', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (1015, '菜单删除', 102, 4, '', '', '', 1, 1, 'F', '0', '0', 'system:menu:remove', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2007, '轮播图', 2043, 1, 'banner', 'uni/banner/index', NULL, 1, 1, 'C', '0', '0', 'uni:banner:list', 'icon', 'admin', '2023-02-08 23:38:34', 'admin', '2023-02-10 08:46:44', '轮播图菜单');
-INSERT INTO `sys_menu` VALUES (2008, '轮播图查询', 2007, 1, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:banner:query', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2009, '轮播图新增', 2007, 2, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:banner:add', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2010, '轮播图修改', 2007, 3, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:banner:edit', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2011, '轮播图删除', 2007, 4, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:banner:remove', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2012, '轮播图导出', 2007, 5, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:banner:export', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2025, '景点信息', 2043, 1, 'spot', 'uni/scenic_spot/index', NULL, 1, 1, 'C', '0', '0', 'uni:spot:list', 'form', 'admin', '2023-02-09 04:25:28', 'admin', '2023-02-10 08:47:15', '景点信息菜单');
-INSERT INTO `sys_menu` VALUES (2026, '景点信息查询', 2025, 1, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:spot:query', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2027, '景点信息新增', 2025, 2, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:spot:add', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2028, '景点信息修改', 2025, 3, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:spot:edit', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2029, '景点信息删除', 2025, 4, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:spot:remove', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2030, '景点信息导出', 2025, 5, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:spot:export', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2031, '要闻', 2043, 1, 'news', 'uni/news/index', NULL, 1, 1, 'C', '0', '0', 'uni:news:list', 'documentation', 'admin', '2023-02-09 11:22:47', 'admin', '2023-02-10 08:47:29', '要闻菜单');
-INSERT INTO `sys_menu` VALUES (2032, '要闻查询', 2031, 1, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:news:query', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2033, '要闻新增', 2031, 2, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:news:add', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2034, '要闻修改', 2031, 3, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:news:edit', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2035, '要闻删除', 2031, 4, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:news:remove', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2036, '要闻导出', 2031, 5, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:news:export', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2037, '文章', 2043, 1, 'article', 'uni/article/index', NULL, 1, 1, 'C', '0', '0', 'uni:article:list', 'documentation', 'admin', '2023-02-09 23:22:36', 'admin', '2023-02-10 08:47:39', '文章菜单');
-INSERT INTO `sys_menu` VALUES (2038, '文章查询', 2037, 1, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:article:query', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2039, '文章新增', 2037, 2, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:article:add', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2040, '文章修改', 2037, 3, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:article:edit', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2041, '文章删除', 2037, 4, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:article:remove', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2042, '文章导出', 2037, 5, '#', '', NULL, 1, 1, 'F', '0', '0', 'system:article:export', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
-INSERT INTO `sys_menu` VALUES (2043, '小程序管理', 0, 0, 'uni', NULL, NULL, 1, 1, 'M', '0', '0', NULL, 'bug', 'admin', '2023-02-10 08:42:11', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1, '系统管理', 0, 1, 'system', NULL, '', 1, 'M', '0', '0', '', 'system', 'admin', '2023-02-08 12:07:07', '', NULL, '系统管理目录');
+INSERT INTO `sys_menu` VALUES (100, '用户管理', 1, 1, 'user', 'system/user/index', '', 1, 'C', '0', '0', 'system:user:list', 'user', 'admin', '2023-02-08 12:07:07', 'admin', '2023-02-10 08:39:40', '用户管理菜单');
+INSERT INTO `sys_menu` VALUES (101, '角色管理', 1, 2, 'role', 'system/role/index', '', 1, 'C', '0', '0', 'system:role:list', 'peoples', 'admin', '2023-02-08 12:07:07', '', NULL, '角色管理菜单');
+INSERT INTO `sys_menu` VALUES (102, '菜单管理', 1, 3, 'menu', 'system/menu/index', '', 1, 'C', '0', '0', 'system:menu:list', 'tree-table', 'admin', '2023-02-08 12:07:07', '', NULL, '菜单管理菜单');
+INSERT INTO `sys_menu` VALUES (1000, '用户查询', 100, 1, '', '', '', 1, 'F', '0', '0', 'system:user:query', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1001, '用户新增', 100, 2, '', '', '', 1, 'F', '0', '0', 'system:user:add', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1002, '用户修改', 100, 3, '', '', '', 1, 'F', '0', '0', 'system:user:edit', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1003, '用户删除', 100, 4, '', '', '', 1, 'F', '0', '0', 'system:user:remove', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1004, '用户导出', 100, 5, '', '', '', 1, 'F', '0', '0', 'system:user:export', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1005, '用户导入', 100, 6, '', '', '', 1, 'F', '0', '0', 'system:user:import', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1006, '重置密码', 100, 7, '', '', '', 1, 'F', '0', '0', 'system:user:resetPwd', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1007, '角色查询', 101, 1, '', '', '', 1, 'F', '0', '0', 'system:role:query', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1008, '角色新增', 101, 2, '', '', '', 1, 'F', '0', '0', 'system:role:add', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1009, '角色修改', 101, 3, '', '', '', 1, 'F', '0', '0', 'system:role:edit', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1010, '角色删除', 101, 4, '', '', '', 1, 'F', '0', '0', 'system:role:remove', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1011, '角色导出', 101, 5, '', '', '', 1, 'F', '0', '0', 'system:role:export', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1012, '菜单查询', 102, 1, '', '', '', 1, 'F', '0', '0', 'system:menu:query', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1013, '菜单新增', 102, 2, '', '', '', 1, 'F', '0', '0', 'system:menu:add', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1014, '菜单修改', 102, 3, '', '', '', 1, 'F', '0', '0', 'system:menu:edit', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (1015, '菜单删除', 102, 4, '', '', '', 1, 'F', '0', '0', 'system:menu:remove', '#', 'admin', '2023-02-08 12:07:07', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2007, '轮播图', 2043, 1, 'banner', 'uni/banner/index', NULL, 1, 'C', '0', '0', 'uni:banner:list', 'icon', 'admin', '2023-02-08 23:38:34', 'admin', '2023-02-10 08:46:44', '轮播图菜单');
+INSERT INTO `sys_menu` VALUES (2008, '轮播图查询', 2007, 1, '#', '', NULL, 1, 'F', '0', '0', 'system:banner:query', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2009, '轮播图新增', 2007, 2, '#', '', NULL, 1, 'F', '0', '0', 'system:banner:add', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2010, '轮播图修改', 2007, 3, '#', '', NULL, 1, 'F', '0', '0', 'system:banner:edit', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2011, '轮播图删除', 2007, 4, '#', '', NULL, 1, 'F', '0', '0', 'system:banner:remove', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2012, '轮播图导出', 2007, 5, '#', '', NULL, 1, 'F', '0', '0', 'system:banner:export', '#', 'admin', '2023-02-08 23:38:35', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2025, '景点信息', 2043, 1, 'spot', 'uni/scenic_spot/index', NULL, 1, 'C', '0', '0', 'uni:spot:list', 'form', 'admin', '2023-02-09 04:25:28', 'admin', '2023-02-10 08:47:15', '景点信息菜单');
+INSERT INTO `sys_menu` VALUES (2026, '景点信息查询', 2025, 1, '#', '', NULL, 1, 'F', '0', '0', 'system:spot:query', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2027, '景点信息新增', 2025, 2, '#', '', NULL, 1, 'F', '0', '0', 'system:spot:add', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2028, '景点信息修改', 2025, 3, '#', '', NULL, 1, 'F', '0', '0', 'system:spot:edit', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2029, '景点信息删除', 2025, 4, '#', '', NULL, 1, 'F', '0', '0', 'system:spot:remove', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2030, '景点信息导出', 2025, 5, '#', '', NULL, 1, 'F', '0', '0', 'system:spot:export', '#', 'admin', '2023-02-09 04:25:28', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2031, '要闻', 2043, 1, 'news', 'uni/news/index', NULL, 1, 'C', '0', '0', 'uni:news:list', 'documentation', 'admin', '2023-02-09 11:22:47', 'admin', '2023-02-10 08:47:29', '要闻菜单');
+INSERT INTO `sys_menu` VALUES (2032, '要闻查询', 2031, 1, '#', '', NULL, 1, 'F', '0', '0', 'system:news:query', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2033, '要闻新增', 2031, 2, '#', '', NULL, 1, 'F', '0', '0', 'system:news:add', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2034, '要闻修改', 2031, 3, '#', '', NULL, 1, 'F', '0', '0', 'system:news:edit', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2035, '要闻删除', 2031, 4, '#', '', NULL, 1, 'F', '0', '0', 'system:news:remove', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2036, '要闻导出', 2031, 5, '#', '', NULL, 1, 'F', '0', '0', 'system:news:export', '#', 'admin', '2023-02-09 11:22:48', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2037, '文章', 2043, 1, 'article', 'uni/article/index', NULL, 1, 'C', '0', '0', 'uni:article:list', 'documentation', 'admin', '2023-02-09 23:22:36', 'admin', '2023-02-10 08:47:39', '文章菜单');
+INSERT INTO `sys_menu` VALUES (2038, '文章查询', 2037, 1, '#', '', NULL, 1, 'F', '0', '0', 'system:article:query', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2039, '文章新增', 2037, 2, '#', '', NULL, 1, 'F', '0', '0', 'system:article:add', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2040, '文章修改', 2037, 3, '#', '', NULL, 1, 'F', '0', '0', 'system:article:edit', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2041, '文章删除', 2037, 4, '#', '', NULL, 1, 'F', '0', '0', 'system:article:remove', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2042, '文章导出', 2037, 5, '#', '', NULL, 1, 'F', '0', '0', 'system:article:export', '#', 'admin', '2023-02-09 23:22:36', '', NULL, '');
+INSERT INTO `sys_menu` VALUES (2043, '小程序管理', 0, 0, 'uni', NULL, NULL, 1, 'M', '0', '0', NULL, 'bug', 'admin', '2023-02-10 08:42:11', '', NULL, '');
 COMMIT;
 
 -- ----------------------------
@@ -104,9 +103,8 @@ CREATE TABLE `sys_role` (
   `role_name` varchar(30) NOT NULL COMMENT '角色名称',
   `role_key` varchar(100) NOT NULL COMMENT '角色权限字符串',
   `role_sort` int(4) NOT NULL COMMENT '显示顺序',
-  `data_scope` char(1) DEFAULT '1' COMMENT '数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）',
+  `data_scope` char(1) DEFAULT '1' COMMENT '数据范围（1：全部数据权限 2：自定数据权限）',
   `menu_check_strictly` tinyint(1) DEFAULT '1' COMMENT '菜单树选择项是否关联显示',
-  `dept_check_strictly` tinyint(1) DEFAULT '1' COMMENT '部门树选择项是否关联显示',
   `status` char(1) NOT NULL COMMENT '角色状态（0正常 1停用）',
   `del_flag` char(1) DEFAULT '0' COMMENT '删除标志（0代表存在 2代表删除）',
   `create_by` varchar(64) DEFAULT '' COMMENT '创建者',
@@ -121,8 +119,8 @@ CREATE TABLE `sys_role` (
 -- Records of sys_role
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_role` VALUES (1, '超级管理员', 'admin', 1, '1', 1, 1, '0', '0', 'admin', '2023-02-08 12:07:07', '', NULL, '超级管理员');
-INSERT INTO `sys_role` VALUES (2, '普通角色', 'common', 2, '2', 1, 1, '0', '0', 'admin', '2023-02-08 12:07:07', 'admin', '2023-02-13 03:22:22', '普通角色');
+INSERT INTO `sys_role` VALUES (1, '超级管理员', 'admin', 1, '1', 1, '0', '0', 'admin', '2023-02-08 12:07:07', '', NULL, '超级管理员');
+INSERT INTO `sys_role` VALUES (2, '普通角色', 'common', 2, '2', 1, '0', '0', 'admin', '2023-02-08 12:07:07', 'admin', '2023-02-13 03:22:22', '普通角色');
 COMMIT;
 
 -- ----------------------------
@@ -176,8 +174,27 @@ CREATE TABLE `sys_user` (
 -- Records of sys_user
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_user` VALUES (1, 'admin', '超级管理员', '00', '13067843910@qq.com', '13067843910', '0', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '192.168.0.103', '2023-02-13 18:39:34', 'admin', '2023-02-08 12:07:07', '', '2023-02-13 10:39:34', '超级管理员');
+INSERT INTO `sys_user` VALUES (1, 'admin', '超级管理员', '00', '13067843910@qq.com', '13067843910', '0', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2023-02-18 03:08:54', 'admin', '2023-02-08 12:07:07', '', '2023-02-17 19:08:54', '超级管理员');
 INSERT INTO `sys_user` VALUES (2, 'test', '测试用户', '00', '13067843910@qq.com', '13067843910', '0', '', '$2a$10$4F6Vg3OHn9rXgsar8Vuy4.K9S9zAfPkc5X1HvWDKoE0wjTddGrKK.', '0', '0', '192.168.0.103', '2023-02-13 11:23:16', 'admin', '2023-02-08 12:07:07', 'admin', '2023-02-13 03:23:15', '测试用户');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for sys_user_cache
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user_cache`;
+CREATE TABLE `sys_user_cache` (
+  `cache_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户缓存ID',
+  `user_key` varchar(255) NOT NULL DEFAULT '' COMMENT '缓存key',
+  `login_user` varchar(1000) NOT NULL DEFAULT '' COMMENT '缓存value',
+  PRIMARY KEY (`cache_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='用户信息缓存';
+
+-- ----------------------------
+-- Records of sys_user_cache
+-- ----------------------------
+BEGIN;
+INSERT INTO `sys_user_cache` VALUES (26, 'login_tokens:9e18c89c-c344-4413-b654-117326345087', '{\"browser\":\"Chrome 10\",\"ipaddr\":\"127.0.0.1\",\"loginLocation\":\"内网IP\",\"loginTime\":1676658252592,\"os\":\"Mac OS X\",\"permissions\":[\"*:*:*\"],\"token\":\"9e18c89c-c344-4413-b654-117326345087\",\"user\":{\"admin\":true,\"avatar\":\"\",\"createBy\":\"admin\",\"createTime\":\"2023-02-08 12:07:07\",\"delFlag\":\"0\",\"email\":\"13067843910@qq.com\",\"loginDate\":\"2023-02-18 02:20:23\",\"loginIp\":\"127.0.0.1\",\"nickName\":\"超级管理员\",\"params\":{},\"password\":\"$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2\",\"phonenumber\":\"13067843910\",\"remark\":\"超级管理员\",\"roles\":[{\"admin\":true,\"dataScope\":\"1\",\"deptCheckStrictly\":false,\"flag\":false,\"menuCheckStrictly\":false,\"params\":{},\"roleId\":1,\"roleKey\":\"admin\",\"roleName\":\"超级管理员\",\"roleSort\":1,\"status\":\"0\"}],\"sex\":\"0\",\"status\":\"0\",\"userId\":1,\"userName\":\"admin\"},\"userId\":1,\"username\":\"admin\"}');
+INSERT INTO `sys_user_cache` VALUES (27, 'login_tokens:224bc70c-8c26-4b61-8951-cd9a634f4047', '{\"browser\":\"Chrome 10\",\"ipaddr\":\"127.0.0.1\",\"loginLocation\":\"内网IP\",\"loginTime\":1676660934370,\"os\":\"Mac OS X\",\"permissions\":[\"*:*:*\"],\"token\":\"224bc70c-8c26-4b61-8951-cd9a634f4047\",\"user\":{\"admin\":true,\"avatar\":\"\",\"createBy\":\"admin\",\"createTime\":\"2023-02-08 12:07:07\",\"delFlag\":\"0\",\"email\":\"13067843910@qq.com\",\"loginDate\":\"2023-02-18 02:24:13\",\"loginIp\":\"127.0.0.1\",\"nickName\":\"超级管理员\",\"params\":{},\"password\":\"$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2\",\"phonenumber\":\"13067843910\",\"remark\":\"超级管理员\",\"roles\":[{\"admin\":true,\"dataScope\":\"1\",\"deptCheckStrictly\":false,\"flag\":false,\"menuCheckStrictly\":false,\"params\":{},\"roleId\":1,\"roleKey\":\"admin\",\"roleName\":\"超级管理员\",\"roleSort\":1,\"status\":\"0\"}],\"sex\":\"0\",\"status\":\"0\",\"userId\":1,\"userName\":\"admin\"},\"userId\":1,\"username\":\"admin\"}');
 COMMIT;
 
 -- ----------------------------
