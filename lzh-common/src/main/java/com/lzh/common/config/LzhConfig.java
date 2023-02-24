@@ -92,14 +92,6 @@ public class LzhConfig
     }
 
     /**
-     * 获取下载路径
-     */
-    public static String getDownloadPath()
-    {
-        return getProfile() + "/download/";
-    }
-
-    /**
      * 获取上传路径
      */
     public static String getUploadPath()

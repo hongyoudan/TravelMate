@@ -1,4 +1,4 @@
-package com.lzh.common.web.exception;
+package com.lzh.common.exception;
 
 import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.lzh.common.constant.HttpStatus;
 import com.lzh.common.core.domain.AjaxResult;
-import com.lzh.common.exception.DemoModeException;
-import com.lzh.common.exception.ServiceException;
 import com.lzh.common.utils.StringUtils;
 
 /**
