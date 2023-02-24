@@ -1,8 +1,5 @@
 package com.lzh.uni.domain;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-import com.lzh.common.annotation.Excel;
 import com.lzh.common.core.domain.BaseEntity;
 
 /**
@@ -16,27 +13,21 @@ public class UniArticle extends BaseEntity
     private Integer id;
 
     /** 文章标题 */
-    @Excel(name = "文章标题")
     private String title;
 
     /** 图片地址 */
-    @Excel(name = "图片地址")
     private String imgUrl;
 
     /** 文章简介 */
-    @Excel(name = "文章简介")
     private String introduction;
 
     /** 文章内容 */
-    @Excel(name = "文章内容")
     private String content;
 
     /** 文章类型 0 官方攻略 1 热门活动 2 头条资讯 3 热门资讯 */
-    @Excel(name = "文章类型 0 官方攻略 1 热门活动 2 头条资讯 3 热门资讯")
     private String type;
 
     /** 是否在首页展示 0 不展示 1 展示 */
-    @Excel(name = "是否在首页展示 0 不展示 1 展示")
     private String isDisplay;
 
     public void setId(Integer id) 

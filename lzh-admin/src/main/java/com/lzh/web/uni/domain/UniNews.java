@@ -2,7 +2,6 @@ package com.lzh.uni.domain;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import com.lzh.common.annotation.Excel;
 import com.lzh.common.core.domain.BaseEntity;
 
 /**
@@ -16,11 +15,9 @@ public class UniNews extends BaseEntity
     private Integer id;
 
     /** 要闻名称 */
-    @Excel(name = "要闻名称")
     private String name;
 
     /** 要闻内容 */
-    @Excel(name = "要闻内容")
     private String content;
 
     public void setId(Integer id) 

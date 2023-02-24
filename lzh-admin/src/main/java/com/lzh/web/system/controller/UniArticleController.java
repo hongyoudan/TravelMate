@@ -1,4 +1,4 @@
-package com.lzh.web.system.controller.uni;
+package com.lzh.web.system.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +18,7 @@ import com.lzh.common.core.domain.AjaxResult;
 import com.lzh.common.enums.BusinessType;
 import com.lzh.uni.domain.UniArticle;
 import com.lzh.uni.service.IUniArticleService;
-import com.lzh.common.utils.poi.ExcelUtil;
+ 
 import com.lzh.common.core.page.TableDataInfo;
 
 /**
@@ -42,19 +42,6 @@ public class UniArticleController extends BaseController
         startPage();
         List<UniArticle> list = uniArticleService.selectUniArticleList(uniArticle);
         return getDataTable(list);
-    }
-
-    /**
-     * 导出文章列表
-     */
-    @PreAuthorize("@ss.hasPermi('uni:article:export')")
-    @Log(title = "文章", businessType = BusinessType.EXPORT)
-    @PostMapping("/export")
-    public void export(HttpServletResponse response, UniArticle uniArticle)
-    {
-        List<UniArticle> list = uniArticleService.selectUniArticleList(uniArticle);
-        ExcelUtil<UniArticle> util = new ExcelUtil<UniArticle>(UniArticle.class);
-        util.exportExcel(response, list, "文章数据");
     }
 
     /**

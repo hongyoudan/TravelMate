@@ -67,17 +67,6 @@
         >删除
         </el-button>
       </el-col>
-      <el-col :span="1.5">
-        <el-button
-          type="warning"
-          plain
-          icon="el-icon-download"
-          size="mini"
-          @click="handleExport"
-          v-hasPermi="['system:spot:export']"
-        >导出
-        </el-button>
-      </el-col>
       <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
@@ -137,7 +126,7 @@
           <el-input v-model="form.name" placeholder="请输入景点名称"/>
         </el-form-item>
         <el-form-item label="图片" prop="imgUrl">
-          <image-upload v-model="form.imgUrl" limit="1"/>
+          <image-upload v-model="form.imgUrl" :limit=1 />
         </el-form-item>
         <el-form-item label="是否热门" prop="isHot">
           <el-radio-group v-model="form.isHot">
@@ -336,12 +325,6 @@ export default {
         this.$modal.msgSuccess('删除成功')
       }).catch(() => {
       })
-    },
-    /** 导出按钮操作 */
-    handleExport() {
-      this.download('system/spot/export', {
-        ...this.queryParams
-      }, `spot_${new Date().getTime()}.xlsx`)
     }
   }
 }

@@ -56,16 +56,6 @@
           v-hasPermi="['system:banner:remove']"
         >删除</el-button>
       </el-col>
-      <el-col :span="1.5">
-        <el-button
-          type="warning"
-          plain
-          icon="el-icon-download"
-          size="mini"
-          @click="handleExport"
-          v-hasPermi="['system:banner:export']"
-        >导出</el-button>
-      </el-col>
       <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
@@ -117,7 +107,7 @@
           <el-input v-model="form.link" placeholder="请输入轮播图链接地址" />
         </el-form-item>
         <el-form-item label="图片地址" prop="imgUrl">
-          <image-upload v-model="form.imgUrl" limit="1"/>
+          <image-upload v-model="form.imgUrl" :limit=1 />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -268,12 +258,6 @@ export default {
         this.getList();
         this.$modal.msgSuccess("删除成功");
       }).catch(() => {});
-    },
-    /** 导出按钮操作 */
-    handleExport() {
-      this.download('system/banner/export', {
-        ...this.queryParams
-      }, `banner_${new Date().getTime()}.xlsx`)
     }
   }
 };

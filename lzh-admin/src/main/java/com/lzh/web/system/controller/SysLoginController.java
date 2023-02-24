@@ -1,4 +1,4 @@
-package com.lzh.web.system.controller.system;
+package com.lzh.web.system.controller;
 
 import java.util.List;
 import java.util.Set;

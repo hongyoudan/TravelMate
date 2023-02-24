@@ -79,16 +79,6 @@
           v-hasPermi="['system:article:remove']"
         >删除</el-button>
       </el-col>
-      <el-col :span="1.5">
-        <el-button
-          type="warning"
-          plain
-          icon="el-icon-download"
-          size="mini"
-          @click="handleExport"
-          v-hasPermi="['system:article:export']"
-        >导出</el-button>
-      </el-col>
       <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
@@ -173,7 +163,7 @@
           </el-select>
         </el-form-item>
         <el-form-item label="图片" prop="imgUrl">
-          <image-upload v-model="form.imgUrl" limit="1"/>
+          <image-upload v-model="form.imgUrl" :limit=1 />
         </el-form-item>
         <el-form-item label="简介" prop="introduction">
           <el-input v-model="form.introduction" placeholder="请输入文章简介" />
@@ -366,12 +356,6 @@ export default {
         this.getList();
         this.$modal.msgSuccess("删除成功");
       }).catch(() => {});
-    },
-    /** 导出按钮操作 */
-    handleExport() {
-      this.download('system/article/export', {
-        ...this.queryParams
-      }, `article_${new Date().getTime()}.xlsx`)
     }
   }
 };

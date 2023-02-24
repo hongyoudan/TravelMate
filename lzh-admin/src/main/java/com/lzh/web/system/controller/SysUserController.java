@@ -1,4 +1,4 @@
-package com.lzh.web.system.controller.system;
+package com.lzh.web.system.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,7 +29,7 @@ import com.lzh.common.core.page.TableDataInfo;
 import com.lzh.common.enums.BusinessType;
 import com.lzh.common.utils.SecurityUtils;
 import com.lzh.common.utils.StringUtils;
-import com.lzh.common.utils.poi.ExcelUtil;
+ 
 
 /**
  * @Date: 2023-02-09
@@ -55,35 +55,6 @@ public class SysUserController extends BaseController
         startPage();
         List<SysUser> list = userService.selectUserList(user);
         return getDataTable(list);
-    }
-
-    @Log(title = "用户管理", businessType = BusinessType.EXPORT)
-    @PreAuthorize("@ss.hasPermi('system:user:export')")
-    @PostMapping("/export")
-    public void export(HttpServletResponse response, SysUser user)
-    {
-        List<SysUser> list = userService.selectUserList(user);
-        ExcelUtil<SysUser> util = new ExcelUtil<SysUser>(SysUser.class);
-        util.exportExcel(response, list, "用户数据");
-    }
-
-    @Log(title = "用户管理", businessType = BusinessType.IMPORT)
-    @PreAuthorize("@ss.hasPermi('system:user:import')")
-    @PostMapping("/importData")
-    public AjaxResult importData(MultipartFile file, boolean updateSupport) throws Exception
-    {
-        ExcelUtil<SysUser> util = new ExcelUtil<SysUser>(SysUser.class);
-        List<SysUser> userList = util.importExcel(file.getInputStream());
-        String operName = getUsername();
-        String message = userService.importUser(userList, updateSupport, operName);
-        return success(message);
-    }
-
-    @PostMapping("/importTemplate")
-    public void importTemplate(HttpServletResponse response)
-    {
-        ExcelUtil<SysUser> util = new ExcelUtil<SysUser>(SysUser.class);
-        util.importTemplateExcel(response, "用户数据");
     }
 
     /**

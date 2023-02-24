@@ -1,4 +1,4 @@
-package com.lzh.web.system.controller.system;
+package com.lzh.web.system.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
 import errorCode from '@/utils/errorCode'
 
 let timeout = 10000
-const baseUrl = 'http://192.168.0.103:2301'
+const baseUrl = 'http://192.168.0.102:2301'
 
 const request = config => {
 	// 是否需要设置 token

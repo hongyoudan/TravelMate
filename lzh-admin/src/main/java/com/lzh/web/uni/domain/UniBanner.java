@@ -2,7 +2,6 @@ package com.lzh.uni.domain;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import com.lzh.common.annotation.Excel;
 import com.lzh.common.core.domain.BaseEntity;
 
 /**
@@ -16,15 +15,12 @@ public class UniBanner extends BaseEntity
     private Integer id;
 
     /** 轮播图标题 */
-    @Excel(name = "轮播图标题")
     private String title;
 
     /** 轮播图链接地址 */
-    @Excel(name = "轮播图链接地址")
     private String link;
 
     /** 轮播图图片地址 */
-    @Excel(name = "轮播图图片地址")
     private String imgUrl;
 
     public void setId(Integer id) 

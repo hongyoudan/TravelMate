@@ -1,4 +1,4 @@
-package com.lzh.web.system.controller.system;
+package com.lzh.web.system.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
@@ -27,7 +27,7 @@ import com.lzh.common.core.domain.model.LoginUser;
 import com.lzh.common.core.page.TableDataInfo;
 import com.lzh.common.enums.BusinessType;
 import com.lzh.common.utils.StringUtils;
-import com.lzh.common.utils.poi.ExcelUtil;
+ 
 import com.lzh.web.system.service.SysPermissionService;
 import com.lzh.web.system.service.TokenService;
 
@@ -58,16 +58,6 @@ public class SysRoleController extends BaseController
         startPage();
         List<SysRole> list = roleService.selectRoleList(role);
         return getDataTable(list);
-    }
-
-    @Log(title = "角色管理", businessType = BusinessType.EXPORT)
-    @PreAuthorize("@ss.hasPermi('system:role:export')")
-    @PostMapping("/export")
-    public void export(HttpServletResponse response, SysRole role)
-    {
-        List<SysRole> list = roleService.selectRoleList(role);
-        ExcelUtil<SysRole> util = new ExcelUtil<SysRole>(SysRole.class);
-        util.exportExcel(response, list, "角色数据");
     }
 
     /**

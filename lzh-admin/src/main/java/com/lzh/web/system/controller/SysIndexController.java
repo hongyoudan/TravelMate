@@ -1,4 +1,4 @@
-package com.lzh.web.system.controller.system;
+package com.lzh.web.system.controller;
 
 import com.lzh.common.config.LzhConfig;
 import com.lzh.common.core.domain.AjaxResult;

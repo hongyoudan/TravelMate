@@ -1,4 +1,4 @@
-package com.lzh.web.system.controller.uni;
+package com.lzh.web.system.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +18,7 @@ import com.lzh.common.core.domain.AjaxResult;
 import com.lzh.common.enums.BusinessType;
 import com.lzh.uni.domain.UniScenicSpot;
 import com.lzh.uni.service.IUniScenicSpotService;
-import com.lzh.common.utils.poi.ExcelUtil;
+ 
 import com.lzh.common.core.page.TableDataInfo;
 
 /**
@@ -42,19 +42,6 @@ public class UniScenicSpotController extends BaseController
         startPage();
         List<UniScenicSpot> list = uniScenicSpotService.selectUniScenicSpotList(uniScenicSpot);
         return getDataTable(list);
-    }
-
-    /**
-     * 导出景点信息列表
-     */
-    @PreAuthorize("@ss.hasPermi('uni:scenic_spot:export')")
-    @Log(title = "景点信息", businessType = BusinessType.EXPORT)
-    @PostMapping("/export")
-    public void export(HttpServletResponse response, UniScenicSpot uniScenicSpot)
-    {
-        List<UniScenicSpot> list = uniScenicSpotService.selectUniScenicSpotList(uniScenicSpot);
-        ExcelUtil<UniScenicSpot> util = new ExcelUtil<UniScenicSpot>(UniScenicSpot.class);
-        util.exportExcel(response, list, "景点信息数据");
     }
 
     /**

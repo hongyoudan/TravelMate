@@ -2,7 +2,6 @@ package com.lzh.uni.domain;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import com.lzh.common.annotation.Excel;
 import com.lzh.common.core.domain.BaseEntity;
 
 /**
@@ -16,31 +15,24 @@ public class UniScenicSpot extends BaseEntity
     private Integer id;
 
     /** 景点名称 */
-    @Excel(name = "景点名称")
     private String name;
 
     /** 图片地址 */
-    @Excel(name = "图片地址")
     private String imgUrl;
 
     /** 景点地址 */
-    @Excel(name = "景点地址")
     private String address;
 
     /** 景点简介 */
-    @Excel(name = "景点简介")
     private String introduction;
 
     /** 是否热门 0 不是热门 1 热门 */
-    @Excel(name = "是否热门 0 不是热门 1 热门")
     private String isHot;
 
     /** 景点城市 */
-    @Excel(name = "景点城市")
     private String city;
 
     /** 景点详情 */
-    @Excel(name = "景点详情")
     private String details;
 
     public void setId(Integer id) 
