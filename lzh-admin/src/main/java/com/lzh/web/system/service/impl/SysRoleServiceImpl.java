@@ -6,10 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.lzh.web.system.domain.SysRoleDept;
 import com.lzh.web.system.domain.SysRoleMenu;
 import com.lzh.web.system.domain.SysUserRole;
-import com.lzh.web.system.mapper.SysRoleDeptMapper;
 import com.lzh.web.system.mapper.SysRoleMapper;
 import com.lzh.web.system.mapper.SysRoleMenuMapper;
 import com.lzh.web.system.mapper.SysUserRoleMapper;
